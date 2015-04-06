@@ -145,7 +145,31 @@ public class ElfoTest
         String esperado = "Legolas possui 42 flechas e 0 nível de experiência";
         assertEquals(esperado, resultadoObtido);
     }
-    
+    @Test
+    public void testeToStringElfo1Exp(){
+        //Arrange
+        Elfo umElfo = new Elfo("Legolas");
+        Orc umOrc = new Orc();
+        //act
+        umElfo.atirarFlecha(umOrc);
+        String resultadoObtido = umElfo.toString();
+        //Assert
+        String esperado = "Legolas possui 41 flechas e 1 nível de experiência";
+        assertEquals(esperado, resultadoObtido);
+    }
+    @Test
+    public void testeToStringElfo2Exp(){
+        //Arrange
+        Elfo umElfo = new Elfo("Legolas");
+        Orc umOrc = new Orc();
+        //act
+        umElfo.atirarFlecha(umOrc);
+        umElfo.atirarFlecha(umOrc);
+        String resultadoObtido = umElfo.toString();
+        //Assert
+        String esperado = "Legolas possui 40 flechas e 2 níveis de experiência";
+        assertEquals(esperado, resultadoObtido);
+    }
     
     
     
