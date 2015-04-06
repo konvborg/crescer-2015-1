@@ -6,6 +6,7 @@
 public class Orc
 {
     private int vida = 110;
+    private Status status = Status.VIVO; 
 
     {
         //vida = 110;
@@ -25,6 +26,10 @@ public class Orc
      */
     public void recebeAtaque() {
         this.vida -= 10;
+        status = Status.FERIDO;
+        if(this.vida<=0){
+            status = Status.MORTO;
+        }
         // this.vida = this.vida - 10;
     }
     
@@ -37,8 +42,12 @@ public class Orc
      * @return String com a vida atual do Orc. Ex. Vida Atual: 110
      */
     public String toString(){
-        return ("Vida Atual: " + this.vida);
+        return String.format("Vida Atual: %d. Status: %s.",
+                    this.vida,
+                    this.status
+                    );
   }
+  
     //public String toString(){
     //    return "oi";
     //}
