@@ -68,11 +68,25 @@ public class Elfo
      * 
      */
     public String toString(){
-            String textoFlechas = this.flechas == 1 ? "flecha" : "flechas";
-            String textoExperiencia = this.experiencia == 1 ? "nível" : "níveis";
-            return (this.nome + " possui " + this.flechas + " " + textoFlechas + " e " + this.experiencia + " " + textoExperiencia + " de experiência.");
+            /*StringBuilder builder = new StringBuilder();
+            builder.append(*/
+            return(String.format("%s possui %d %s e %d %s de experiência.",
+                    this.nome,
+                    this.flechas,
+                    this.flechas == 1 ? "flecha" : "flechas",
+                    this.experiencia,
+                    this.experiencia == 1 ? "nível" : "níveis"
+                    )
+                    );
+            
+            //);
+   
+            
+            //return builder.toString();
+            
     }
     
+ 
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
