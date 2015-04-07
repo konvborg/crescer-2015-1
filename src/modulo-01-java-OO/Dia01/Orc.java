@@ -6,19 +6,27 @@
 public class Orc
 {
     private int vida = 110;
+    private String nome;
+    private int experiencia = 0;
     private Status status = Status.VIVO; 
 
     {
         //vida = 110;
     }
+    /**
+     * Construtor Orc definindo nome do Orc
+     * 
+     * @param nome Nome que o Orc receberá
+     */
+    public Orc(String nome) {
+        this.nome = nome;
+    }
     
     /**
-     * Construtor para objetos da classe Orc
-    public Orc()
-    {
-        //vida = 110;
+     * Construtor Orc default
+     */
+    public Orc(){
     }
-    **/
     
     /**
      * Faz o Orc sofrer um ataque.
