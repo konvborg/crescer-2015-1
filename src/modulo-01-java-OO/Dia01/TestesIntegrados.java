@@ -13,9 +13,9 @@ public class TestesIntegrados
     @Test
     public void umElfoAtiraEmDoisOrcs() {
         // Arrange
-        Elfo elfo = new Elfo("O Elfo");
-        Orc orc1 = new Orc();
-        Orc orc2 = new Orc();
+        Elfo elfo = new Elfo("O Elfose");
+        Orc orc1 = new Orc("Robinei");
+        Orc orc2 = new Orc("Loucasso");
         // Act
         elfo.atirarFlecha(orc1);
         elfo.atirarFlecha(orc2);

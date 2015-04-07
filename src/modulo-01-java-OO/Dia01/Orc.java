@@ -50,7 +50,9 @@ public class Orc
         }
         // this.vida = this.vida - 10;
     }
-    
+    public void setVida(int vida){
+        this.vida=vida;
+    }
     public int getVida() {
         return this.vida;
     }
@@ -60,9 +62,8 @@ public class Orc
      * @return String com a vida atual do Orc. Ex. Vida Atual: 110
      */
     public String toString(){
-        return String.format("Vida Atual: %d. Status: %s.",
-                    this.vida,
-                    this.status
+        return String.format("Vida Atual: %d.",
+                    this.vida
                     );
     }
     

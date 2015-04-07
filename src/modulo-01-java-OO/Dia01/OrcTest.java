@@ -29,7 +29,7 @@ public class OrcTest
     @Test
     public void orcRecebeAtaqueUmaVez() {
         // Arrange - Montagem dos dados de teste
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         // Act
         umOrc.recebeAtaque();
         // Assert - Verificação
@@ -42,7 +42,7 @@ public class OrcTest
     @Test
     public void orcRecebeAtaqueDuasVezes() {
         // Arrange - Montagem dos dados de teste
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         // Act
         umOrc.recebeAtaque();
         umOrc.recebeAtaque();
@@ -56,7 +56,7 @@ public class OrcTest
     @Test
     public void orcRecebeAtaqueCincoVezes() {
         // Arrange - Montagem dos dados de teste
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         // Act
         umOrc.recebeAtaque();
         umOrc.recebeAtaque();
@@ -73,7 +73,7 @@ public class OrcTest
     @Test
     public void orcRecebeAtaqueDozeVezes() {
         // Arrange - Montagem dos dados de teste
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         // Act
         umOrc.recebeAtaque();
         umOrc.recebeAtaque();
@@ -97,29 +97,29 @@ public class OrcTest
     @Test
     public void testeToString(){
         //Arrange
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         //act
         String resultadoObtido = umOrc.toString();
         //Assert
-        String esperado = "Vida Atual: 110";
+        String esperado = "Vida Atual: 110.";
         assertEquals(esperado, resultadoObtido);
     }
     
     @Test
     public void testeToStringAposReceberUmAtaque(){
         //Arrange
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         //act
         umOrc.recebeAtaque();
         String resultadoObtido = umOrc.toString();
         //Assert
-        String esperado = "Vida Atual: 100";
+        String esperado = "Vida Atual: 100.";
         assertEquals(esperado, resultadoObtido);
     }
     @Test
     public void testeToStringAposReceberDozeAtaques(){
         //Arrange
-        Orc umOrc = new Orc();
+        Orc umOrc = new Orc("Juarez");
         //act
         umOrc.recebeAtaque();
         umOrc.recebeAtaque();
@@ -135,7 +135,7 @@ public class OrcTest
         umOrc.recebeAtaque();
         String resultadoObtido = umOrc.toString();
         //Assert
-        String esperado = "Vida Atual: -10";
+        String esperado = "Vida Atual: -10.";
         assertEquals(esperado, resultadoObtido);
     }
     
