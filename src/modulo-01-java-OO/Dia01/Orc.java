@@ -53,8 +53,14 @@ public class Orc
     public void setVida(int vida){
         this.vida=vida;
     }
+    public void setStatus(Status status){
+        this.status=status;
+    }
     public int getVida() {
         return this.vida;
+    }
+    public void setExperiencia(int exp){
+        this.experiencia=exp;
     }
     /**
      * Imprime a vida atual do Orc
