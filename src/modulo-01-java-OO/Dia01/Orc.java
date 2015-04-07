@@ -46,9 +46,13 @@ public class Orc
                     }
                 }
         if(this.vida<=0){
+            this.vida=0;
             status = Status.MORTO;
         }
         // this.vida = this.vida - 10;
+    }
+    public Status getStatus(){
+        return this.status;
     }
     public void setVida(int vida){
         this.vida=vida;
