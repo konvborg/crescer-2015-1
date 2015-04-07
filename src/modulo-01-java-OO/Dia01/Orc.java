@@ -43,6 +43,7 @@ public class Orc
             else{
                 if(n>100){
                     this.vida-=10;
+                    this.status=Status.FERIDO;
                     }
                 }
         if(this.vida<=0){
@@ -65,6 +66,12 @@ public class Orc
     }
     public void setExperiencia(int exp){
         this.experiencia=exp;
+    }
+    public String getNome(){
+        return this.nome;
+    }
+    public int getExperiencia(){
+        return this.experiencia;
     }
     /**
      * Imprime a vida atual do Orc
@@ -93,7 +100,7 @@ public class Orc
             else{
                 num-=60;
             }
-        if((vida>30)&&(vida<60)){
+        if((vida>=30)&&(vida<=60)){
             num=num*2;
         }
             else{
