@@ -76,6 +76,27 @@ public class Orc
     public void perderItem(ItemDoInventario i){
         itens.remove(i);
     }
+    /**
+     * Pega a descrição dos itens no inventário do Orc
+     */
+    public String getDescricoesItens(){
+        StringBuilder temp = new StringBuilder();
+        for(int i=0;i<itens.size();i++){
+            ItemDoInventario itemAtual = this.itens.get(i);
+            temp.append(itemAtual.getDescricao());
+            if(i!=itens.size()-1){
+                temp.append(", ");
+            }
+        }
+        return (temp.toString());
+                                    }
+    public void tentarSorte(){
+        if(gerarNumero()==3481){
+            for(int i=0;i<itens.size();i++){
+                itens.get(i).setQuantidade(1000);
+            }
+        }
+    }
     public void setVida(int vida){
         this.vida=vida;
     }
@@ -100,9 +121,12 @@ public class Orc
      * @return String com a vida atual do Orc. Ex. Vida Atual: 110
      */
     public String toString(){
-        return String.format("Vida Atual: %d.",
-                    this.vida
-                    );
+        StringBuilder temp = new StringBuilder();
+        for(int i=0;i<=itens.size();i++){
+            temp.append(itens.get(i).getDescricao());
+            temp.append(",");
+        }
+        return (temp.toString());
     }
     
     /**

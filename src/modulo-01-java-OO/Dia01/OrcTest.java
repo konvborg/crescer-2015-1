@@ -232,6 +232,19 @@ public class OrcTest
        assertEquals(arrayTemp,orc.itens);
        
     }
+    @Test
+    public void getDescricoesComUmItem(){
+       //Arrange
+       Orc orc = new Orc("Daniela Mercury");
+       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",2);
+       orc.adicionarItem(adaga);
+       String descricoesEsperada = "Berimbau metalizado";
+       //Act
+       String resultadoDescricoes = orc.getDescricoesItens();
+       //Assert
+       assertEquals(descricoesEsperada,resultadoDescricoes);
+    }
+    
 }
 
 

@@ -17,16 +17,21 @@ public class ItemDoInventario
     {
         // initialise instance variable
     }
-        public ItemDoInventario(String desc, int quan)
+    public String toString(){   
+        return this.descricao;
+        }
+    public ItemDoInventario(String desc, int quan)
     {
         this.quantidade = quan;
         this.descricao = desc;
+    }
+    public void setQuantidade(int n){
+        this.quantidade=n;
     }
     public int getQuantidade()
     {
         return quantidade;
     }
-    
     public String getDescricao()
     {
         return descricao;
