@@ -58,14 +58,20 @@ public class Orc
         return this.status;
     }
     /**
-     * Adiciona item no inventario do Orc
+     * Adiciona item no inventario do Orc.
      * 
      * @param ItemDoInventario i é o objeto ItemDoInventario a ser adicionado.
      */
     public void adicionarItem(ItemDoInventario i){
         itens.add(i);
     }
-    public void perderItem(){
+    /**
+     * Retira item no inventário do Orc.
+     * 
+     * @param ItemDoInventario i é o objeto ItemDoInventario a ser removido do Orc.
+     */
+    public void perderItem(ItemDoInventario i){
+        itens.remove(i);
     }
     public void setVida(int vida){
         this.vida=vida;
