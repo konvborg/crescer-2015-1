@@ -210,9 +210,23 @@ public class OrcTest
        //Arrange
        Orc orc = new Orc("Daniela Mercury");
        ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",2);
+       ArrayList <ItemDoInventario> arrayTemp = new ArrayList<ItemDoInventario>();
        //Act
        orc.adicionarItem(adaga);
+       arrayTemp.add(adaga);
+       //Act
+       assertEquals(arrayTemp,orc.itens);
+       
+    }
+    @Test
+    public void orcRecebeTresItensItem(){
+       //Arrange
+       Orc orc = new Orc("Daniela Mercury");
+       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",2);
        ArrayList <ItemDoInventario> arrayTemp = new ArrayList<ItemDoInventario>();
+       //Act
+       orc.adicionarItem(adaga);
+
        arrayTemp.add(adaga);
        //Act
        assertEquals(arrayTemp,orc.itens);

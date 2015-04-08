@@ -65,7 +65,10 @@ public class Orc
     public void adicionarItem(ItemDoInventario i){
         itens.add(i);
     }   
-    /**
+    public ArrayList<ItemDoInventario> getItens() {
+       return this.itens;
+    }
+     /**
      * Retira item no inventário do Orc.
      * 
      * @param ItemDoInventario i é o objeto ItemDoInventario a ser removido do Orc.
