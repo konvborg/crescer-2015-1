@@ -22,7 +22,6 @@ public class ItemDoInventario
         this.quantidade = quan;
         this.descricao = desc;
     }
-    
     public int getQuantidade()
     {
         return quantidade;
