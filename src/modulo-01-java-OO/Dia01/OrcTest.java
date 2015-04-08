@@ -1,5 +1,4 @@
-
-
+import java.util.ArrayList;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -191,6 +190,19 @@ public class OrcTest
         //Assert
         assertEquals(vidaEsperada, umOrc.getVida());
         assertEquals(expEsperada, umOrc.getExperiencia());
+    }
+    @Test
+    public void orcRecebeUmIem(){
+       //Arrange
+       Orc orc = new Orc("Daniela Mercury");
+       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",2);
+       //Act
+       orc.adicionarItem(adaga);
+       orc.perderItem(adaga);
+       ArrayList <ItemDoInventario> arrayTemp = new ArrayList<ItemDoInventario>();
+       //Act
+       assertEquals(arrayTemp,orc.itens);
+       
     }
 }
 

@@ -64,7 +64,7 @@ public class Orc
      */
     public void adicionarItem(ItemDoInventario i){
         itens.add(i);
-    }
+    }   
     /**
      * Retira item no inventário do Orc.
      * 
