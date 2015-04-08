@@ -192,7 +192,7 @@ public class OrcTest
         assertEquals(expEsperada, umOrc.getExperiencia());
     }
     @Test
-    public void orcRecebeUmIem(){
+    public void orcRecebeePerdeUmItem(){
        //Arrange
        Orc orc = new Orc("Daniela Mercury");
        ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",2);
@@ -200,6 +200,20 @@ public class OrcTest
        orc.adicionarItem(adaga);
        orc.perderItem(adaga);
        ArrayList <ItemDoInventario> arrayTemp = new ArrayList<ItemDoInventario>();
+       //Act
+       assertEquals(arrayTemp,orc.itens);
+       
+    }
+        
+    @Test
+    public void orcRecebeUmItem(){
+       //Arrange
+       Orc orc = new Orc("Daniela Mercury");
+       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",2);
+       //Act
+       orc.adicionarItem(adaga);
+       ArrayList <ItemDoInventario> arrayTemp = new ArrayList<ItemDoInventario>();
+       arrayTemp.add(adaga);
        //Act
        assertEquals(arrayTemp,orc.itens);
        
