@@ -57,6 +57,11 @@ public class Orc
     public Status getStatus(){
         return this.status;
     }
+    /**
+     * Adiciona item no inventario do Orc
+     * 
+     * @param ItemDoInventario i é o objeto ItemDoInventario a ser adicionado.
+     */
     public void adicionarItem(ItemDoInventario i){
         itens.add(i);
     }
