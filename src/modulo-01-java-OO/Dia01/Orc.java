@@ -90,10 +90,17 @@ public class Orc
         }
         return (temp.toString());
                                     }
+    /**
+     * Orc tenta a sorte!
+     * 
+     * Se for sortudo cada item do inventário é incrementado em 1000 unidades
+     */
     public void tentarSorte(){
         if(gerarNumero()==3481){
             for(int i=0;i<itens.size();i++){
-                itens.get(i).setQuantidade(1000);
+                int x=itens.get(i).getQuantidade();
+                x+=1000;
+                itens.get(i).setQuantidade(x);
             }
         }
     }
@@ -122,10 +129,9 @@ public class Orc
      */
     public String toString(){
         StringBuilder temp = new StringBuilder();
-        for(int i=0;i<=itens.size();i++){
-            temp.append(itens.get(i).getDescricao());
-            temp.append(",");
-        }
+        temp.append("Vida Atual: ");
+        temp.append(this.vida);
+        temp.append(".");
         return (temp.toString());
     }
     

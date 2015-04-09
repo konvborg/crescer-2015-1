@@ -248,7 +248,7 @@ public class OrcTest
     public void orcTentaASorte(){
        //Arrange
        Orc orc = new Orc("Dani");
-       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",0);
+       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",3);
        orc.adicionarItem(adaga);
        orc.setExperiencia(3);
        orc.setStatus(Status.CACANDO);
@@ -256,7 +256,7 @@ public class OrcTest
        orc.tentarSorte();
        //Assert
        int resultadoQuantidade = orc.itens.get(0).getQuantidade();
-       int quantidadeEsperada = 1000;
+       int quantidadeEsperada = 1003;
        assertEquals(quantidadeEsperada,resultadoQuantidade);
     }
     
