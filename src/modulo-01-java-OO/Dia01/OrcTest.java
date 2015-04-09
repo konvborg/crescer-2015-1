@@ -245,7 +245,7 @@ public class OrcTest
        assertEquals(descricoesEsperada,resultadoDescricoes);
     }
     @Test
-    public void orcTentaASorte(){
+    public void orcIrlandêsTentaASorte(){
        //Arrange
        Orc orc = new Orc("Dani");
        ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",3);
@@ -259,7 +259,20 @@ public class OrcTest
        int quantidadeEsperada = 1003;
        assertEquals(quantidadeEsperada,resultadoQuantidade);
     }
-    
+    @Test
+    public void orcNormalTentaASorte(){
+            //Arrange
+       Orc orc = new Orc("Dani");
+       ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",3);
+       orc.adicionarItem(adaga);
+       orc.setStatus(Status.CACANDO);
+       //Act
+       orc.tentarSorte();
+       //Assert
+       int resultadoQuantidade = orc.itens.get(0).getQuantidade();
+       int quantidadeEsperada = 3;
+       assertEquals(quantidadeEsperada,resultadoQuantidade);
+    }
 }
 
 
