@@ -226,7 +226,6 @@ public class OrcTest
        ArrayList <ItemDoInventario> arrayTemp = new ArrayList<ItemDoInventario>();
        //Act
        orc.adicionarItem(adaga);
-
        arrayTemp.add(adaga);
        //Act
        assertEquals(arrayTemp,orc.itens);
@@ -261,7 +260,7 @@ public class OrcTest
     }
     @Test
     public void orcNormalTentaASorte(){
-            //Arrange
+       //Arrange
        Orc orc = new Orc("Dani");
        ItemDoInventario adaga = new ItemDoInventario("Berimbau metalizado",3);
        orc.adicionarItem(adaga);
@@ -272,6 +271,51 @@ public class OrcTest
        int resultadoQuantidade = orc.itens.get(0).getQuantidade();
        int quantidadeEsperada = 3;
        assertEquals(quantidadeEsperada,resultadoQuantidade);
+    }
+    @Test
+    public void getItemComMaiorQuantidadeComItemMaiorNoMeio(){
+        //Arrange
+        Orc orc = new Orc("Gandalf");
+        ItemDoInventario pao = new ItemDoInventario ("Três queijos de 30",5);
+        orc.adicionarItem(pao);
+        ItemDoInventario cachaca = new ItemDoInventario ("Garrafa de Cachaça de Nocututinha",500);
+        orc.adicionarItem(cachaca);
+        ItemDoInventario cueca = new ItemDoInventario ("Cueca",20);
+        orc.adicionarItem(cueca);
+        //Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        //Assert
+        assertEquals(cachaca,resultado);
+    }
+        @Test
+    public void getItemComMaiorQuantidadeComItemMaiorNoFinal(){
+        //Arrange
+        Orc orc = new Orc("Gandalf");
+        ItemDoInventario pao = new ItemDoInventario ("Três queijos de 30",3);
+        orc.adicionarItem(pao);
+        ItemDoInventario cachaca = new ItemDoInventario ("Garrafa de Cachaça de Nocututinha",500);
+        orc.adicionarItem(cachaca);
+        ItemDoInventario cueca = new ItemDoInventario ("Cueca",2430);
+        orc.adicionarItem(cueca);
+        //Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        //Assert
+        assertEquals(cueca,resultado);
+    }
+        @Test
+    public void getItemComMaiorQuantidadeComItemMaiorNoInicio(){
+        //Arrange
+        Orc orc = new Orc("Gandalf");
+        ItemDoInventario pao = new ItemDoInventario ("Três queijos de 30",5253);
+        orc.adicionarItem(pao);
+        ItemDoInventario cachaca = new ItemDoInventario ("Garrafa de Cachaça de Nocututinha",500);
+        orc.adicionarItem(cachaca);
+        ItemDoInventario cueca = new ItemDoInventario ("Cueca",20);
+        orc.adicionarItem(cueca);
+        //Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        //Assert
+        assertEquals(pao,resultado);
     }
 }
 
