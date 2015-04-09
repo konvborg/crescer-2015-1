@@ -77,7 +77,23 @@ public class Orc
         itens.remove(i);
     }
     /**
+     * Pega o item com maior quantidade no inventário
+     * @return Item no inventario do Orc com maior quantidade
+     */
+    public ItemDoInventario getItemComMaiorQuantidade(){
+        ItemDoInventario maiorquantidade = new ItemDoInventario();
+        ItemDoInventario itemAtual = new ItemDoInventario();
+        for(int i=0;i<itens.size();i++){
+            itemAtual = this.itens.get(i);
+            if(itemAtual.getQuantidade()>maiorquantidade.getQuantidade()){
+                maiorquantidade = itemAtual;
+            }
+        }
+        return maiorquantidade;
+    }
+    /**
      * Pega a descrição dos itens no inventário do Orc
+     * @return Itens no inventário do Orc separados por vírgula. Ex: "Adaga, Faca, Berimbau".
      */
     public String getDescricoesItens(){
         StringBuilder temp = new StringBuilder();
@@ -88,7 +104,7 @@ public class Orc
                 temp.append(", ");
             }
         }
-        return (temp.toString());
+        return temp.toString();
                                     }
     /**
      * Orc tenta a sorte!
