@@ -78,11 +78,15 @@ public class Orc
     }
     /**
      * Pega o item com maior quantidade no inventário
+     * 
      * @return Item no inventario do Orc com maior quantidade
      */
     public ItemDoInventario getItemComMaiorQuantidade(){
         ItemDoInventario maiorquantidade = new ItemDoInventario();
         ItemDoInventario itemAtual = new ItemDoInventario();
+        if(itens.isEmpty()){
+            return null;
+        }
         for(int i=0;i<itens.size();i++){
             itemAtual = this.itens.get(i);
             if(itemAtual.getQuantidade()>maiorquantidade.getQuantidade()){
