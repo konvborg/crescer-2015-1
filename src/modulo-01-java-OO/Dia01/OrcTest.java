@@ -317,6 +317,39 @@ public class OrcTest
         //Assert
         assertEquals(pao,resultado);
     }
+    @Test
+    public void getItemComUmItem(){
+        //Arrange
+        Orc orc = new Orc("Gandalf");
+        ItemDoInventario pao = new ItemDoInventario ("Três queijos de 30",5);
+        orc.adicionarItem(pao);
+        //Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        //Assert
+        assertEquals(pao,resultado);
+    }
+    @Test
+    public void getItemComDoisItensComAMesmaQuantidade(){
+        //Arrange
+        Orc orc = new Orc("Gandalf");
+        ItemDoInventario pao = new ItemDoInventario ("Três queijos de 30",5);
+        orc.adicionarItem(pao);
+        ItemDoInventario cachaca = new ItemDoInventario ("Garrafa de Cachaça de Nocututinha",5);
+        orc.adicionarItem(cachaca);
+        //Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        //Assert
+        assertEquals(pao,resultado);
+    }
+    @Test
+    public void getItemSemItem(){
+        //Arrange
+        Orc orc = new Orc("Gandalf");
+        //Act
+        ItemDoInventario resultado = orc.getItemComMaiorQuantidade();
+        //Assert
+        assertEquals(null,resultado);
+    }
 }
 
 
