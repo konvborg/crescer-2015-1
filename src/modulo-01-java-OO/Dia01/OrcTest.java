@@ -350,8 +350,67 @@ public class OrcTest
         //Assert
         assertEquals(null,resultado);
     }
+    @Test
+    public void ordenarSemItens() {
+        //Arrange
+        Orc orc1 = new Orc();
+        //Act
+        orc1.ordenarItens();
+        String resultadoEsperado = "";
+        String resultadoObtido = orc1.getDescricoesItens();
+        //Asser 
+        assertEquals(resultadoEsperado,resultadoObtido);
+        
+    }
+    
+    @Test
+    public void ordenarUmItem() {
+        //Arrange
+        Orc orc1 = new Orc();
+        ItemDoInventario queijo = new ItemDoInventario ("Catupiry Alado",5);
+        orc1.adicionarItem(queijo);
+        //Act
+        orc1.ordenarItens();
+        String resultadoEsperado = "Catupiry Alado";
+        String resultadoObtido = orc1.getDescricoesItens();
+        //Assert
+        assertEquals(resultadoEsperado,resultadoObtido);
+        
+    }
+    
+    @Test
+    public void ordenarDoisItens() {
+        //Arrange
+        Orc orc1 = new Orc();
+        ItemDoInventario queijo = new ItemDoInventario ("Catupiry Alado", 5);
+        ItemDoInventario calculadora = new ItemDoInventario ("Calculadora Quântica",-7);
+        orc1.adicionarItem(queijo);
+        orc1.adicionarItem(calculadora);
+        //Act
+        orc1.ordenarItens();
+        String resultadoEsperado = "Calculadora Quântica,Catupiry Alado";
+        String resultadoObtido = orc1.getDescricoesItens();
+        //Assert
+        assertEquals(resultadoEsperado,resultadoObtido);
+        
+    }
+    
+    @Test
+    public void ordenarTresItens() {
+        //Arrange
+        Orc orc1 = new Orc();
+        ItemDoInventario queijo = new ItemDoInventario ("Catupiry Alado", 5);
+        ItemDoInventario calculadora = new ItemDoInventario ("Calculadora Quântica",-7);
+        ItemDoInventario redale = new ItemDoInventario ("Red Ale",10);
+        orc1.adicionarItem(queijo);
+        orc1.adicionarItem(calculadora);
+        orc1.adicionarItem(redale);
+        //Act
+        orc1.ordenarItens();
+        String resultadoEsperado = "Calculadora Quântica,Catupiry Alado,Red Ale";
+        String resultadoObtido = orc1.getDescricoesItens();
+        //Assert
+        assertEquals(resultadoEsperado,resultadoObtido);
+        
+    }
 }
-
-
-
-

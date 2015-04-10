@@ -95,6 +95,28 @@ public class Orc
         }
         return maiorquantidade;
     }
+      /**
+      * Ordena os itens no inventário do Orc pela quantidade de forma crescente.
+      * 
+      */
+     public void ordenarItens() {
+         int i = 0;
+         int o = 0;
+         int tamanho = this.itens.size();
+             for (i = 0; i < tamanho-1; i++) {
+                     for(o=0; o < tamanho-1; o++) {
+                         ItemDoInventario itemAtual = this.itens.get(o);
+                         ItemDoInventario proximoItem = this.itens.get(o+1);
+                         int atual = itemAtual.getQuantidade();
+                         int proxima = proximoItem.getQuantidade();
+                         if(proxima < atual){
+                             ItemDoInventario temp = this.itens.get(o+1);
+                             itens.set(o+1,this.itens.get(o));
+                             itens.set(o,temp);
+                         }
+                     }
+             }
+    }
     /**
      * Pega a descrição dos itens no inventário do Orc
      * @return Itens no inventário do Orc separados por vírgula. Ex: "Adaga, Faca, Berimbau".
@@ -105,7 +127,7 @@ public class Orc
             ItemDoInventario itemAtual = this.itens.get(i);
             temp.append(itemAtual.getDescricao());
             if(i!=itens.size()-1){
-                temp.append(", ");
+                temp.append(",");
             }
         }
         return temp.toString();
