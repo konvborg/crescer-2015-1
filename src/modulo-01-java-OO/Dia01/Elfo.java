@@ -7,7 +7,7 @@
 public class Elfo extends Personagem
 {
     // Versão correção do tema!!
-    private int flechas;
+    protected int flechas;
 
     // type initializer
     {
@@ -41,7 +41,7 @@ public class Elfo extends Personagem
      * 
      * @param umOrc Orc que receberá uma flechada.
      */
-    public void atirarFlecha(Orc umOrc) {
+    protected void atirarFlecha(Orc umOrc) {
         //flechas = flechas - 1;
         flechas--;
         experiencia++;
