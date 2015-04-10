@@ -13,22 +13,24 @@ public class TestesIntegrados
     @Test
     public void umElfoAtiraEmDoisOrcs() {
         // Arrange
-        Elfo elfo = new Elfo("O Elfose");
-        Orc orc1 = new Orc("Robinei");
-        Orc orc2 = new Orc("Loucasso");
+        Elfo elfo = new Elfo("O Elfo");
+        Orc orc1 = new Orc("Urukhai 1");
+        Orc orc2 = new Orc("Urukhai 2");
         // Act
         elfo.atirarFlecha(orc1);
         elfo.atirarFlecha(orc2);
         // Assert
         int experienciaEsperada = 2;
         int flechasEsperadas = 40;
-        int vidaEsperadaOrc1 = 100;
-        int vidaEsperadaOrc2 = 100;
+        int vidaEsperadaOrc = 100;
+        String toStringEsperadoOrc = "Vida atual: 100";
         
         assertEquals(experienciaEsperada, elfo.getExperiencia());
         assertEquals(flechasEsperadas, elfo.getFlechas());
-        assertEquals(vidaEsperadaOrc1, orc1.getVida());
-        assertEquals(vidaEsperadaOrc2, orc2.getVida());
+        assertEquals(vidaEsperadaOrc, orc1.getVida());
+        assertEquals(vidaEsperadaOrc, orc2.getVida());
+        assertEquals(toStringEsperadoOrc, orc1.toString());
+        assertEquals(toStringEsperadoOrc, orc2.toString());
     }
     
     

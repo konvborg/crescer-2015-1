@@ -1,27 +1,36 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe de teste do ItemDoInventarioTest.
+ * Testes unitários da classe ItemDoInventario
  *
- * @autor Mauricio Borges
+ * @author CWI Software
  */
 public class ItemDoInventarioTest
 {
     @Test
-    public void criarItemComDescricaoEQuantidade() {
+    public void criarItemComQuantidadeDescricaoInformadas() {
         // Arrange
-        ItemDoInventario item = new ItemDoInventario("Loucura",1);
+        int quantidadeEsperada = 12;
+        String descricaoEsperada = "Martelo de Thor - Mjollnir";
         // Act
-        int quantesperada = 1;
-        String descesperada = "Loucura";
+        ItemDoInventario item = new ItemDoInventario(quantidadeEsperada, descricaoEsperada);
         // Assert
-        assertEquals(quantesperada, item.getQuantidade());
-        assertEquals(descesperada, item.getDescricao());
+        assertEquals(quantidadeEsperada, item.getQuantidade());
+        assertEquals(descricaoEsperada, item.getDescricao());
     }
     
+    @Test
+    public void criarItemComQuantidadeNegativaDescricaoNula() {
+        // Arrange
+        int quantidadeEsperada = -3456;
+        String descricaoEsperada = null;
+        // Act
+        ItemDoInventario item = new ItemDoInventario(quantidadeEsperada, descricaoEsperada);
+        // Assert
+        assertEquals(quantidadeEsperada, item.getQuantidade());
+        assertEquals(descricaoEsperada, item.getDescricao());
+    }
 }
