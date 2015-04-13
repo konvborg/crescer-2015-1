@@ -11,7 +11,7 @@ public ElfoVerde(String nome){
     super(nome,0);
     }
 /**
- * Chama o método atirar flecha, mas ganha mais um de experiencia.
+ * Chama o método atirar flecha, mas ganha dois de experiencia.
  * @param umOrc Orc que vai receber a flecha.
  */
 protected void atirarFlecha(Orc umOrc) {
