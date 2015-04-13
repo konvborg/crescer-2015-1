@@ -23,7 +23,25 @@ public class ElfoVerdeTest
         elfo.atirarFlecha(orc);
         // Assert
         int experienciaEsperada = 2;
-        int flechasEsperadas = -1;
+        int flechasEsperadas = 41;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    @Test
+    public void elfoVerdeAtira5Flechas() {
+        // Arrange
+        ElfoVerde elfo = new ElfoVerde("Burrito");
+        Orc orc = new Orc();
+        // Act
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 10;
+        int flechasEsperadas = 37;
         
         assertEquals(experienciaEsperada, elfo.getExperiencia());
         assertEquals(flechasEsperadas, elfo.getFlechas());

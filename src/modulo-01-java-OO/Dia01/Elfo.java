@@ -32,7 +32,7 @@ public class Elfo extends Personagem
      * @param nome Nome a ser dado para o Elfo.
      */
     public Elfo(String nome) {
-        super(nome, 0);
+        super(nome, 100);
     }
     
     /**

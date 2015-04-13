@@ -8,7 +8,7 @@
 public class ElfoVerde extends Elfo
 {
 public ElfoVerde(String nome){
-    super(nome,0);
+    super(nome,42);
     }
 /**
  * Chama o método atirar flecha, mas ganha dois de experiencia.
