@@ -176,11 +176,10 @@ public class Personagem
         // C#
         // return this.itens.Max(x => x.getQuantidade());
     }
-    
     /**
      * Ordena itens do inventário por quantidade ascendente.
      * 
-     * Algoritmo atual: Bubblesort
+     * Algoritmo atual: Mergesort
      */
     protected void ordenarItens() {
         
