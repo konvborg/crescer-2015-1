@@ -5,21 +5,24 @@
  */
 public class ContadorDeNumeros
 {
-    private static int x;
-    private int y;
-    
+    private static int numeroDeElfos=0;
+    public static void adicionarUmElfoAoContador(){
+        numeroDeElfos++;
+    }
+    public static void resetarNumeroDeElfos(){
+        numeroDeElfos=0;
+    }
+    public static int getNumeroDeElfos(){
+        return numeroDeElfos;
+    }
     public static void contarAte5() {
-        x = 10;
         for (int i = 0; i < 5; i++) {
             // execute tudo que tem aqui dentro
             System.out.println(i + 1);
         }
     }
     
-    public void contarAte3() {
-        
-        x = 11;
-        
+    public void contarAte3() {        
         for (int i = 0; i < 3; i++) {
             // execute tudo que tem aqui dentro
             //System.out.println(i + 1);
