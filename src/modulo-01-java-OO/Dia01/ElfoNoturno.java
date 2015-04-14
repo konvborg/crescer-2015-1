@@ -15,6 +15,8 @@ protected void atirarFlecha(Orc umOrc) {
     super.atirarFlecha(umOrc);
     experiencia++;
     experiencia++;
-    vida=vida-(vida/20);
+    double vidaAPerder = vida*0.05;
+    this.vida-=vidaAPerder;
+    this.mataSeMereceMorrer();
     }
 }

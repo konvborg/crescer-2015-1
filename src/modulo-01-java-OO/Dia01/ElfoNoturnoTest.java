@@ -40,10 +40,67 @@ public class ElfoNoturnoTest
         // Assert
         int experienciaEsperada = 15;
         int flechasEsperadas = 37;
-        int vidaEsperada=79;
+        int vidaEsperada=76;
         
         assertEquals(experienciaEsperada, elfo.getExperiencia());
         assertEquals(flechasEsperadas, elfo.getFlechas());
         assertEquals(vidaEsperada, elfo.getVida());
+    }
+    @Test
+    public void elfoNoturnoAtiraFlechasEMorre() {
+        // Arrange
+        ElfoNoturno elfo = new ElfoNoturno("Emo");
+        Orc orc = new Orc();
+        // Act
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        // Assert
+        int vidaEsperada = 0;
+        Status statusEsperado = Status.MORTO;
+        assertEquals(vidaEsperada, elfo.getVida());
+        assertEquals(statusEsperado, elfo.getStatus());
     }
 }

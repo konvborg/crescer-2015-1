@@ -59,7 +59,14 @@ public class Personagem
     protected void perderItem(ItemDoInventario item) {
         this.itens.remove(item);
     }
-    
+    /**
+     * Mata se merece morrer.
+     */
+    protected void mataSeMereceMorrer(){
+        if(this.vida>=0){
+            this.status = Status.MORTO;
+        }
+    }
     /**
      * Concatena as descrições dos itens, separados por vírgula.
      * 
