@@ -1,20 +1,24 @@
 /**
- * Objeto que sabe contar números em ordem!
+ * Objeto que sabe conta.
  * 
  * @author CWI Software
  */
 public class ContadorDeNumeros
 {
     private static int numeroDeElfos=0;
+    
     public static void adicionarUmElfoAoContador(){
         numeroDeElfos++;
     }
+    
     public static void resetarNumeroDeElfos(){
         numeroDeElfos=0;
     }
+    
     public static int getNumeroDeElfos(){
         return numeroDeElfos;
     }
+    
     public static void contarAte5() {
         for (int i = 0; i < 5; i++) {
             // execute tudo que tem aqui dentro

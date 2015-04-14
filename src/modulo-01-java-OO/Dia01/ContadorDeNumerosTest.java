@@ -13,7 +13,6 @@ public class ContadorDeNumerosTest{
     @Test
     public void contarSemElfosCriados() {
         // Arrange
-        ContadorDeNumeros.resetarNumeroDeElfos();
         int quantidadeEsperada = 0;
         // Act
         int quantidadeObtida = ContadorDeNumeros.getNumeroDeElfos();
@@ -23,7 +22,6 @@ public class ContadorDeNumerosTest{
     @Test
     public void criarElfoEContar() {
         // Arrange
-        ContadorDeNumeros.resetarNumeroDeElfos();
         int quantidadeEsperada = 1;
         // Act
         Elfo elfo = new Elfo("Salogel");
@@ -34,7 +32,6 @@ public class ContadorDeNumerosTest{
     @Test
     public void criarElfoVerdeEContar() {
         // Arrange
-        ContadorDeNumeros.resetarNumeroDeElfos();
         int quantidadeEsperada = 1;
         // Act
         ElfoVerde elfo = new ElfoVerde("Salogel Edrev");
@@ -45,7 +42,6 @@ public class ContadorDeNumerosTest{
     @Test
     public void criarElfoNoturnoEContar() {
         // Arrange
-        ContadorDeNumeros.resetarNumeroDeElfos();
         int quantidadeEsperada = 1;
         // Act
         ElfoNoturno elfo = new ElfoNoturno("Salogel Onruton");
@@ -56,7 +52,6 @@ public class ContadorDeNumerosTest{
     @Test
     public void criarElfosDeTiposDiferentesEContar() {
         // Arrange
-        ContadorDeNumeros.resetarNumeroDeElfos();
         int quantidadeEsperada = 6;
         // Act
         Elfo elfo1 = new Elfo("Legolas");
@@ -68,6 +63,10 @@ public class ContadorDeNumerosTest{
         int quantidadeObtida = ContadorDeNumeros.getNumeroDeElfos();
         // Assert
         assertEquals(quantidadeEsperada, quantidadeObtida);
+    }
+    @Before
+    public void setUp(){
+        ContadorDeNumeros.resetarNumeroDeElfos();
     }
     
 }
