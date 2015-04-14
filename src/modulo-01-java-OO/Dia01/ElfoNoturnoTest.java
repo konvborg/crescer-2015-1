@@ -90,7 +90,7 @@ public class ElfoNoturnoTest
         ElfoNoturno elfoSuiçida = new ElfoNoturno("Night Legolas");
         Status statusEsperado = Status.MORTO;
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 90; i++)
             elfoSuiçida.atirarFlecha(new Orc());
 
         Status obtido = elfoSuiçida.getStatus();

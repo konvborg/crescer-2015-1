@@ -21,6 +21,9 @@ public class ElfoNoturno extends Elfo
         //double qtdVidaAPerder = this.vida * 5/100;
         this.vida -= qtdVidaAPerder;
         this.status = (int)this.vida == 0 ? Status.MORTO : this.status;
-    }   
-
+    } 
+    @Override
+    public String toString() {
+        return "Elfo Noturno: " + super.toString();
+    }
 }

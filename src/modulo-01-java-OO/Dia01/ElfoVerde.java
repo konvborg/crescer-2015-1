@@ -41,4 +41,9 @@ public class ElfoVerde extends Elfo
             super.adicionarItem(item);
         }
     }
+    
+    @Override
+    public String toString() {
+        return "Elfo Verde: " + super.toString();
+    }
 }
