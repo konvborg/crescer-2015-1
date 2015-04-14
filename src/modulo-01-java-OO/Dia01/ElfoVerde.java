@@ -1,30 +1,44 @@
+import java.util.Arrays;
 
 /**
- * @author Mauricio Borges
+ * Define objetos ElfoVerde.
+ * 
+ * @author CWI Software
  */
 public class ElfoVerde extends Elfo
 {
-public ElfoVerde(String nome){
-    super(nome,42);
+    private final String[] ITENS_PERMITIDOS = new String[] {
+        "Espada de aço valiriano",
+        "Arco e Flecha de vidro"
+    };
+    
+    public ElfoVerde(String nome) {
+        super(nome);
     }
-/**
- * Chama o método atirar flecha, mas ganha dois de experiencia.
- * @param umOrc Orc que vai receber a flecha.
- */
-protected void atirarFlecha(Orc umOrc) {
-    //flechas = flechas - 1;
-    super.atirarFlecha(umOrc);
-    experiencia++;
+    
+    /**
+     * Atira a flecha "à moda verde".
+     * Por ser um elfo verde, ganhará o dobro de experiência que um Elfo comum.
+     * 
+     * @param orc Orc que receberá a flechada.
+     */
+    public void atirarFlecha(Orc orc) {
+        super.atirarFlecha(orc);
+        this.experiencia++;
     }
-/**
- * Adiciona item no inventario desde que ele seja uma Espada de aço valiriano ou um Arco e Flecha de Vidro.
- * @param ItemDoInventario item a ser adicionado
- */
-    protected void adicionarItem(ItemDoInventario item){
-    if((item.getDescricao()=="Espada de aço valiriano")||(item.getDescricao()=="Arco e Flecha de Vidro")){
-            this.itens.add(item);
-    }else{
-        return;
-    }
+    
+    /**
+     * Adiciona o item no inventário, desde que o mesmo tenha descrição válida.
+     * Atuais descrições válidas: "Espada de aço valiriano", "Arco e Flecha de vidro"
+     * 
+     * @param item ItemDoInventario a ser adicionado
+     */
+    public void adicionarItem(ItemDoInventario item) {
+        
+        boolean descricaoValida = item != null && Arrays.asList(ITENS_PERMITIDOS).contains(item.getDescricao());
+
+        if (descricaoValida) {
+            super.adicionarItem(item);
+        }
     }
 }
