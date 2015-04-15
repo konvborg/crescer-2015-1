@@ -6,12 +6,15 @@
 public class Elfo extends Personagem
 {
     // Versão correção do tema!!
-    protected int flechas;
+    private int flechas;
+    private static int qtdElfosCriados;
+    private int x;
 
     // type initializer
     {
         flechas = 42;
         vida = 100;
+        Elfo.qtdElfosCriados++;
     }
     
     /**
@@ -57,6 +60,15 @@ public class Elfo extends Personagem
     public int getFlechas() {
         return this.flechas;
     }
+    
+    public static int getQtdElfosCriados() {
+        return Elfo.qtdElfosCriados;
+    }
+    
+    public static void resetaQuantidadeDeElfos() {
+        Elfo.qtdElfosCriados = 0;
+    }
+    
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
@@ -121,5 +133,17 @@ public class Elfo extends Personagem
         builder.append(" ");
         builder.append(textoNiveis);
         builder.append(" de experiência.");*/
+    }
+    
+    /**
+     * Verifica se dois elfos são iguais.
+     * Critério atual: ter o mesmo nome.
+     * 
+     * @param outro Outro objeto elfo a ser comparado.
+     * @return boolean Verdadeiro caso sejam iguais. Falso caso contrário.
+     */
+    @Override
+    public boolean equals(Object outro) {
+        return ((Elfo)outro).getNome().equals(this.nome);
     }
 }
