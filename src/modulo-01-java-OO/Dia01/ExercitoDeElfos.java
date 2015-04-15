@@ -10,6 +10,7 @@ public class ExercitoDeElfos
 {
     private HashMap<String, Elfo> exercito = new HashMap<>();
     private HashMap<Status, ArrayList<Elfo>> porStatus = new HashMap<>();
+    private EstrategiaDeAtaque estrategia = new EstrategiaNormal(); 
     
     public HashMap<String, Elfo> getExercito() {
         return this.exercito;
@@ -24,13 +25,15 @@ public class ExercitoDeElfos
      * 
      * @param elfo Elfo a ser alistado no exército. Deve ser apenas do tipo ElfoVerde ou ElfoNoturno
      */
-    public void alistar(Elfo elfo) {
+    public void alistar(Elfo elfo) throws NaoPodeAlistarException {
         
         boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
         
         if (podeAlistar) {
             exercito.put(elfo.getNome(), elfo);
-        }   
+        }   else{
+            throw new NaoPodeAlistarException();
+        }
     }
     
     /**
@@ -66,5 +69,9 @@ public class ExercitoDeElfos
         agruparPorStatus();
         return porStatus.get(status);
     }
+    
+    public void atacarHorda(ArrayList<Orc> orcs){
+        ArrayList<Elfo> elfosQueVãoPraPeleia = buscar(Status.VIVO);
+        estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
     }
-
+}
