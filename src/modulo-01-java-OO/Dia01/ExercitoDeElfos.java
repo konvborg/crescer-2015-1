@@ -9,6 +9,7 @@ public class ExercitoDeElfos
 {
     private HashMap<String, Elfo> exercito = new HashMap<>();
     private HashMap<Status, ArrayList<Elfo>> porStatus = new HashMap<>();
+    private EstrategiaDeAtaque estrategia = new EstrategiaNormal();
     
     public HashMap<String, Elfo> getExercito() {
         return this.exercito;
@@ -70,6 +71,13 @@ public class ExercitoDeElfos
                 // var arr = new [] { elfo, elfo1, elfo2, elfo3 };
             }
         }
+    }
+    
+    public void atacarHorda(ArrayList<Orc> orcs) {
+        
+        ArrayList<Elfo> elfosQueVãoPraPeleia = buscar(Status.VIVO);
+        
+        estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
     }
     
 
