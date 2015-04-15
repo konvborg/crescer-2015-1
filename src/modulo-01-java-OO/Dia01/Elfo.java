@@ -28,7 +28,6 @@ public class Elfo extends Personagem
         this(umNome);
         // this.nome = nome;
         this.flechas = flechas;
-        ContadorDeNumeros.adicionarUmElfoAoContador();
     }
     
     /**
@@ -38,7 +37,6 @@ public class Elfo extends Personagem
      */
     public Elfo(String nome) {
         super(nome, 100);
-        ContadorDeNumeros.adicionarUmElfoAoContador();
     }
     
     /**
@@ -51,6 +49,7 @@ public class Elfo extends Personagem
         flechas--;
         experiencia++;
         umOrc.recebeAtaque();
+        status = Status.ATACANDO;
     }
     
     public String getNome() {
