@@ -131,4 +131,8 @@ public class Orc extends Personagem
                 
         return numeroGerado;
     }
+    
+    public void imprimeNome() {
+        // TODO: System.out.println...
+    }
 }
