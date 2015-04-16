@@ -7,3 +7,4 @@ Banco de dados
  Download: http://www.microsoft.com/en-us/download/details.aspx?id=29062
 
  Será utilizado o SQL Server no início do treinamento, devido a facilidade de ambiente nos laboratórios da Feevale.
+ A partir da quarta aula será utilizado Oracle.
