@@ -84,6 +84,9 @@ public class ExercitoDeElfos
         estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
     }
     
+    public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
+        return this.estrategia.getOrdemDoUltimoAtaque();
+    }
 
 }
 
