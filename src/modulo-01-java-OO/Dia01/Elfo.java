@@ -50,6 +50,7 @@ public class Elfo extends Personagem
         flechas--;
         experiencia++;
         umOrc.recebeAtaque();
+        status = Status.ATACANDO;
     }
     
     public String getNome() {
@@ -144,5 +145,9 @@ public class Elfo extends Personagem
     @Override
     public boolean equals(Object outro) {
         return ((Elfo)outro).getNome().equals(this.nome);
+    }
+    
+    public void imprimeNome() {
+        // TODO: System.out.println...
     }
 }
