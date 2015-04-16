@@ -193,11 +193,11 @@ public class ExercitoDeElfosTest
         elfoAtacando1.atirarFlecha(new Orc());
         elfoAtacando2.atirarFlecha(new Orc());
         HashMap<Status, ArrayList<Elfo>> esperado = new HashMap<>();
-        esperado.put(Status.ATACANDO, new ArrayList<>(
+        esperado.put(Status.ATACANDO, new ArrayList<Elfo>(
             Arrays.asList(elfoAtacando1, elfoAtacando2)
         ));
         esperado.put(Status.VIVO, new ArrayList<>(
-            Arrays.asList(elfoVivo2, elfoVivo3, elfoVivo1)
+            Arrays.asList(elfoVivo3, elfoVivo2, elfoVivo1)
         ));
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         try {
@@ -226,7 +226,7 @@ public class ExercitoDeElfosTest
         ElfoVerde elfoAtacando2 = new ElfoVerde("Green 3");
         elfoAtacando1.atirarFlecha(new Orc());
         elfoAtacando2.atirarFlecha(new Orc());
-        ArrayList<Elfo> esperado = new ArrayList<>(
+        ArrayList<Elfo> esperado = new ArrayList<Elfo>(
             Arrays.asList(elfoAtacando1, elfoAtacando2)
         );
         ExercitoDeElfos exercito = new ExercitoDeElfos();
