@@ -5,7 +5,6 @@ public class EstrategiaIntercalada implements EstrategiaDeAtaque
     private ArrayList<Elfo> ordemAtaque = new ArrayList<>();
     
     public void atacarOrcs(ArrayList<Elfo> elfos, ArrayList<Orc> orcs) {
-        
         // garante que não ataca se a lista de elfos é vazia OU o exército não é proporcional (50%-50%)
         if (elfos.isEmpty() || !validarProporcoes(elfos)) {
             return;
