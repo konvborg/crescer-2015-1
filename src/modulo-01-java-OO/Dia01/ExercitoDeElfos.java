@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 /**
@@ -10,7 +9,7 @@ public class ExercitoDeElfos
 {
     private HashMap<String, Elfo> exercito = new HashMap<>();
     private HashMap<Status, ArrayList<Elfo>> porStatus = new HashMap<>();
-    private EstrategiaDeAtaque estrategia = new EstrategiaNormal(); 
+    private EstrategiaDeAtaque estrategia = new EstrategiaNormal();
     
     public HashMap<String, Elfo> getExercito() {
         return this.exercito;
@@ -31,8 +30,8 @@ public class ExercitoDeElfos
         
         if (podeAlistar) {
             exercito.put(elfo.getNome(), elfo);
-        }   else{
-            throw new NaoPodeAlistarException();
+        } else {
+            ErrosDoJogo.naoPodeAlistar();
         }
     }
     
@@ -45,33 +44,57 @@ public class ExercitoDeElfos
     public Elfo buscar(String nome) {
         return exercito.get(nome);
     }
-    /**
-     * Agrupa elfos pelo status.
-     */
-    public void agruparPorStatus(){
-        porStatus.clear();
-        for(Map.Entry<String, Elfo> parChaveValor : exercito.entrySet()){
-            Elfo elfo = parChaveValor.getValue();
-            Status status = elfo.getStatus();
-            if(porStatus.containsKey(status)){
-                porStatus.get(status).add(elfo);
-            }else{
-                porStatus.put(status, new ArrayList<>(
-                    Arrays.asList(elfo)
-                ));
-                //C#
-                // var arr = new []] {elfo, elfo1, elfo2, elfo3};   
-            }
-        }       
-    }
     
-    public ArrayList<Elfo> buscar(Status status){
+    public ArrayList<Elfo> buscar(Status status) {
         agruparPorStatus();
         return porStatus.get(status);
     }
     
-    public void atacarHorda(ArrayList<Orc> orcs){
+    /**
+     * Agrupa os elfos do exército utilizando o campo status dos objetos.
+     */
+    public void agruparPorStatus() {
+        
+        porStatus.clear();
+        
+        for (Map.Entry<String, Elfo> parChaveValor : exercito.entrySet()) {
+            Elfo elfo = parChaveValor.getValue();
+            Status status = elfo.getStatus();
+            
+            if (porStatus.containsKey(status)) {
+                porStatus.get(status).add(elfo);
+            } else {
+                porStatus.put(status, new ArrayList<>(
+                    Arrays.asList(elfo)
+                ));
+                // C#
+                // var arr = new [] { elfo, elfo1, elfo2, elfo3 };
+            }
+        }
+    }
+    
+    public void mudaDeEstrategia(EstrategiaDeAtaque novaEstrategia) {
+        estrategia = novaEstrategia;
+    }    
+    
+    public void atacarHorda(ArrayList<Orc> orcs) {
+        
         ArrayList<Elfo> elfosQueVãoPraPeleia = buscar(Status.VIVO);
+        
         estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
     }
+    
+    public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
+        return this.estrategia.getOrdemDoUltimoAtaque();
+    }
 }
+
+
+
+
+
+
+
+
+
+

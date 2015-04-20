@@ -76,7 +76,7 @@ public class ElfoNoturnoTest
     }
 
     @Test
-    public void quandoatirarFlechaStatusVivo() {
+    public void quandoatirarFlechaStatusAtacando() {
         ElfoNoturno elfoNoturno = new ElfoNoturno("Night Legolas");
         Status statusEsperado = Status.ATACANDO;
         elfoNoturno.atirarFlecha(new Orc());

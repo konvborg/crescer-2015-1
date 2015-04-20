@@ -135,8 +135,9 @@ public class Orc extends Personagem
     }
     public String getNome(){
         return this.nome;
+        } 
+    
+    public void imprimeNome() {
+        // TODO: System.out.println...
     }
-    public int getExperiencia(){
-        return this.experiencia;
-    }    
 }

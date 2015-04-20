@@ -9,7 +9,7 @@ import java.util.*;
 // public sealed class Personagem
 // Java:
 // public final class Personagem
-public class Personagem
+public abstract class Personagem
 {
     protected Status status = Status.VIVO;
     protected double vida;
@@ -246,4 +246,6 @@ public class Personagem
         // itens.sort_by { |x| x.quantidade }
         
     }
+    
+    abstract void imprimeNome();
 }
