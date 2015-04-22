@@ -5,8 +5,8 @@ public class EstrategiaPriorizandoElfosVerdes implements EstrategiaDeAtaque
     private ArrayList<Elfo> ordemAtaque = new ArrayList<>();
     
     public void atacarOrcs(ArrayList<Elfo> elfos, ArrayList<Orc> orcs) {
-        //ordenaComBubbleSort(elfos, orcs);
-        ordenaComCollectionSort(elfos, orcs);
+        //ordenaComBubbleSort(elfos);
+        ordenaComCollectionSort(elfos);
         
         for (Elfo elfo : elfos) {
             ordemAtaque.add(elfo);
@@ -20,7 +20,7 @@ public class EstrategiaPriorizandoElfosVerdes implements EstrategiaDeAtaque
         return ordemAtaque;
     }
     
-    private void ordenaComBubbleSort(ArrayList<Elfo> elfos, ArrayList<Orc> orcs) {
+    private void ordenaComBubbleSort(ArrayList<Elfo> elfos) {
         
         boolean houverTroca = true;
         while (houverTroca) {
@@ -44,7 +44,7 @@ public class EstrategiaPriorizandoElfosVerdes implements EstrategiaDeAtaque
         }
     }
     
-    private void ordenaComCollectionSort(ArrayList<Elfo> elfos, ArrayList<Orc> orcs) {
+    private void ordenaComCollectionSort(ArrayList<Elfo> elfos) {
         Collections.sort(elfos, new Comparator<Elfo>() {
             public int compare(Elfo elfoAtual, Elfo proximoElfo) {
                 boolean mesmoTipo = elfoAtual.getClass() == proximoElfo.getClass();
