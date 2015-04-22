@@ -45,7 +45,7 @@ Group by Nome, UF
 Having count(nome)>1 and count(UF)>1
 
 --9
-Select TOP 1 IDAssociado + 1 as proximo_id
+Select TOP 1 ISNULL(IDAssociado,0) + 1 as proximo_id
 From Associado
 Order by IDAssociado desc
 
