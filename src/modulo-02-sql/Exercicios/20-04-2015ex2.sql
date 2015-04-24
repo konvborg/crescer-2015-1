@@ -56,3 +56,63 @@ WITH CTE AS(
    FROM CidadeAux
 )
 DELETE FROM CTE WHERE RN > 1	
+
+/*
+Delete from CidadeAux;
+
+Select Nome, UF, Count(1) as Total, MIN(IDCidade) Menor_IDCidade	
+From Cidade
+Group by nome, UF
+Having Count(1)>1
+
+
+*/
+--11
+begin transaction
+
+Update Cidade 
+set Nome = '*' + Nome
+Where nome IN(Select nome
+			  from cidade
+			  group by nome,uf
+			  having count(1)>1
+			  )
+
+SELECT * FROM CIDADE ORDER BY NOME
+COMMIT
+
+--12
+Select Nome,
+	   case Sexo
+			when 'M' then 'Masculino'
+			when 'F' then 'Feminino'
+			else 'Outro'
+			End Genero
+From Associado
+
+--13
+Select nomeempregado,
+	   salario,
+	   Case when Salario <= 1164 then 0
+			--when Salario > 1164 and salario <= 2326 then (Salario*0.15) 
+			when Salario between 1164.01 and 2326 then (Salario*0.15)
+			when Salario > 2326 then (Salario*0.275)
+			else 0
+			End Desconto_IR
+From Empregado
+
+--14
+Begin Transaction
+Delete from cidade
+where IDCidade in (Select MAX(IDCidade)
+				   from Cidade
+				   group by nome, uf
+				   having count(1)>1)
+Commit
+
+
+--15
+
+Alter table Cidade add constraint UK_Cidade_Nome_UF unique (Nome, UF);
+
+--16
