@@ -1,3 +1,12 @@
+--Remover * do inicio dos nomes
+Begin Transaction
+
+update Cidade
+set Nome = replace (nome, '*', '')
+where Nome like '*%'
+
+Commit
+
 --1
 
 Select e.NomeEmpregado as NomeEmpregado,
@@ -12,24 +21,26 @@ from Associado a
 	LEFT JOIN Cidade c ON a.IDCidade = c.IDCidade;
 
 --3
-Select c.UF, count(1) as CidadesSemRegistro
+Select c.UF, count(1) as TotalCidadesSemRegistro
 From Cidade c
 Where NOT EXISTS(Select 1
-			 From Associado a
-			 Where a.IDCidade = c.IDCidade)
+				 From Associado a
+				 Where a.IDCidade = c.IDCidade)
 Group by c.UF
 
 --4
-
+--create view vw_Cidade_Regiao as
 Select a.Nome, 
-       city.Nome as Cidade_Sul
+       c.Nome as Cidade_Sul
 From Associado a
 Left join (Select IDCidade, ('***') as Nome
 			From Cidade
-			Where UF in ('SC', 'PR', 'RS') )as city
-on city.IDCidade = a.IDCidade
+			Where UF in ('SC', 'PR', 'RS') )as c
+on c.IDCidade = a.IDCidade
+--Select * from vw_Cidade_Regiao
 
 --5
+
 Select e.NomeEmpregado,
 	   g.NomeEmpregado as NomeGerente,
 	   d.NomeDepartamento
