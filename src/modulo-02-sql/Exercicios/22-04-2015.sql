@@ -31,18 +31,13 @@ on city.IDCidade = a.IDCidade
 
 --5
 Select e.NomeEmpregado,
-	   g.NomeEmpregado as NomeGerente
+	   g.NomeEmpregado as NomeGerente,
+	   d.NomeDepartamento
 	   from Empregado e
 		 LEFT JOIN Empregado g
 		   ON e.IDGerente = g.IDEmpregado
-
-Select  e.NomeEmpregado,
-		d.NomeDepartamento
-from Empregado e
-	left join Departamento d
-		on e.IDDepartamento = d.IDDepartamento
-
-select * from empregado
+		 LEFT JOIN Departamento d 
+		   ON d.IDDepartamento = e.IDDepartamento
 
 --6
 select *
