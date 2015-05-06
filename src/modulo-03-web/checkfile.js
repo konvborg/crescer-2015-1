@@ -9,6 +9,7 @@ function checkFile() {
     }
     else {
         alert("A imagem deve ser .PNG ou .JPG");
+        this.value="";
         return false;
     }
 }
