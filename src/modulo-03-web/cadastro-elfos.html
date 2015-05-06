@@ -3,48 +3,49 @@
 	<head>
 		<title>Cadastro de Elfos</title>
 		<meta charset="UTF-8">
+	 	<script src="checkfile.js"></script>
 	</head>
 	<body>
 		<h3>Cadastro de Elfos</h3>
 		<form method="post">
 			<div style="height: 50px;">
-			<label for="nome"">Nome:</label>
-			<input name="nome" type="text" required="true" pattern=".{6,}" title="O nome deve ter no mínimo seis caractéres.">
+				<label for="nome"">Nome:</label>
+				<input name="nome" type="text" required="true" pattern=".{6,}" title="O nome deve ter no mínimo seis caractéres.">
 			</div>
 			<div style="height: 50px;">
-			<label for="sexo">Sexo:</label>
-			<input type="radio" name="sexo" value="male" required>Masculino
-			<input type="radio" name="sexo" value="female" required>Feminino
+				<label for="sexo">Sexo:</label>
+				<input type="radio" name="sexo" value="male" required>Masculino
+				<input type="radio" name="sexo" value="female" required>Feminino
 			</div>
 			<div style="height: 50px;">
-			<label for="qtdflechas">Nome:</label>
-			<input name="qtdflechas" type="number" value="42">
+				<label for="qtdflechas">Nome:</label>
+				<input name="qtdflechas" type="number" value="42">
 			</div>
 			<div style="height: 50px;">
-			<label for="data">Data de Nascimento</label>
-			<input name="data" type="date">
+				<label> for="data">Data de Nascimento</label>
+				<input name="data" type="date">
 			</div>
 			<div style="height: 50px;">
-			<label for="status">Status Inicial</label>
-			<select name="status">
-  			<option value="dormindo">Dormindo</option>
-  			<option value="cacando">Caçando</option>
-  			<option value="contandopiada">Contando Piada</option>
-			</select>
+				<label for="status">Status Inicial</label>
+				<select name="status">
+	  			<option value="dormindo">Dormindo</option>
+	  			<option value="cacando">Caçando</option>
+	  			<option value="contandopiada">Contando Piada</option>
+				</select>
 			</div>
 			<div style="height: 50px;">
-			<label for="itens">Itens:</label>
-			<input type="checkbox" name="itens" value="arco" checked>Arco e Flecha
-			<input type="checkbox" name="itens" value="espada">Espada de aço Porto-alegrense 
-			<input type="checkbox" name="itens" value="escudo" checked>Escudo de amburana 
-			<input type="checkbox" name="itens" value="pocao">Poção HP
+				<label for="itens">Itens:</label>
+				<input type="checkbox" name="itens" value="arco" checked>Arco e Flecha
+				<input type="checkbox" name="itens" value="espada">Espada de aço Porto-alegrense 
+				<input type="checkbox" name="itens" value="escudo" checked>Escudo de amburana 
+				<input type="checkbox" name="itens" value="pocao">Poção HP
 			</div>
 			<div style="height: 50px;">
-			<label for="imagem">Imagem de Avatar (JPG ou PNG)</label>
-			<input type="file" name="img" accept="image/jpg,image/png">
+				<label for="imagem">Imagem de Avatar (JPG ou PNG)</label>
+				<input type="file" name="img">
 			</div>
 			<div>
-			<input type="submit" value="Cadastrar">
+				<input type="submit" value="Cadastrar">
 			</div>
 		</form>
 	</body>
