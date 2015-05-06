@@ -14,23 +14,23 @@
 			</div>
 			<div style="height: 50px;">
 				<label for="sexo">Sexo:</label>
-				<input type="radio" name="sexo" value="male" required>Masculino
-				<input type="radio" name="sexo" value="female" required>Feminino
+				<input type="radio" name="sexo" value="m" required>Masculino
+				<input type="radio" name="sexo" value="f" required>Feminino
 			</div>
 			<div style="height: 50px;">
-				<label for="qtdflechas">Nome:</label>
+				<label for="qtdflechas">Quantidade inicial de flechas:</label>
 				<input name="qtdflechas" type="number" value="42">
 			</div>
 			<div style="height: 50px;">
-				<label for="data">Data de Nascimento</label>
+				<label for="data">Data de Nascimento:</label>
 				<input name="data" type="date" required="true">
 			</div>
 			<div style="height: 50px;">
-				<label for="status">Status Inicial</label>
+				<label for="status">Status Inicial:</label>
 				<select name="status">
 	  			<option value="dormindo">Dormindo</option>
-	  			<option value="cacando">Caçando</option>
-	  			<option value="contandopiada">Contando Piada</option>
+	  			<option value="caçando">Caçando</option>
+	  			<option value="contando_piada">Contando Piada</option>
 				</select>
 			</div>
 			<div style="height: 50px;">
@@ -41,8 +41,8 @@
 				<input type="checkbox" name="itens" value="pocao">Poção HP
 			</div>
 			<div style="height: 50px;">
-				<label for="imagem">Imagem de Avatar (JPG ou PNG)</label>	
-				<input type="file" id="img" name="img" onchange="checkFile()" accept="image/*">
+				<label for="imagem">Imagem de Avatar (JPG ou PNG):	</label>	
+				<input type="file" id="img" name="img" onchange="checkFile()" accept=".png,.jpg,.jpeg">
 			</div>
 			<div>
 				<input type="submit" value="Cadastrar">
