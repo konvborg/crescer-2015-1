@@ -40,13 +40,38 @@
 				</select>
 			</p>
 			<p>
-				<input type="file" name="avatar" accept=".jpg,.jpeg,.png">
+				<input type="file" id="avatar" name="avatar" accept=".jpg,.jpeg,.png" onchange="return validarExt();">
 			</p>
 			<p>
 				<input type="submit" value="Cadastrar">
 			</p>
 			
 		</form>
+		<script>
+			function validarExt() {
+				//var inputFile = document.getElementsByName('avatar')[0];
+				var inputFile = document.getElementById('avatar');
+				var nomeArquivo = inputFile.value;
+				var valida = false;
+				var extensoesValidas = [ '.jpg', '.jpeg', '.png' ];
+				for (var i = 0, len = extensoesValidas.length; i < len; i++) {
+					var ext = extensoesValidas[i];
+					var apenasAExtensao = nomeArquivo.substring(nomeArquivo.length-ext.length, nomeArquivo.length).toLowerCase();
+										
+					if (apenasAExtensao === ext.toLowerCase()) {
+						valida = true;
+						break;
+					}
+				}
+				
+				if (valida === false) {
+					alert('Extensão inválida!');
+					inputFile.value = null;
+				}
+				
+				return valida;
+			}
+		</script>
 	</body>
 </html>
 
