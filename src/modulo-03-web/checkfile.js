@@ -5,11 +5,11 @@ function checkFile() {
         fileExtension = fileElement.value.substring(fileElement.value.lastIndexOf(".") + 1, fileElement.value.length);
     }
     if (fileExtension == "png" || fileExtension == "jpg") {
-        return true;
+        return;
     }
     else {
-        alert("A imagem deve ser .PNG ou .JPG");
-        this.value="";
-        return false;
+        alert("A imagem deve ser .png ou .jpg");
+        fileElement.value='';
+        return;
     }
 }
