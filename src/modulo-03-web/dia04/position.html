@@ -1,0 +1,58 @@
+<!doctype>
+<html>
+	<head>
+		<title>Hello position!</title>
+		<meta charset="utf-8">
+		<meta keywords="site muito legal cwi css web css3">
+		<style>
+			body {
+				margin: 0;
+			}
+			.fixa {
+				position: fixed;
+				top: 50px;
+				left: 500px;
+			}
+			.retangulo-azul {
+				background-color: blue;
+				height: 200px;
+				width: 450px;
+				top: 100px;
+			}
+			.absoluta {
+				position: absolute;
+				top: 70px;
+				left: 200px;
+			}
+			.relativa {
+				position: relative;
+			}
+			.golden-retriever {
+				background-image: url(http://www.smartfile.com/blog/wp-content/uploads/2013/06/dog.jpg);
+				height: 333px;
+				width: 460px;
+				font-size: 0px;
+			}
+			.fundo-golden {
+				background: 
+					url(http://www.smartfile.com/blog/wp-content/uploads/2013/06/dog.jpg)
+					repeat;
+			}
+		</style>
+	</head>
+	<body class="not-fundo-golden">
+		<img class="relativa golden-retriever" alt="Golden sem saber o que fazer">
+		<img class="fixa golden-retriever" alt="Golden sem saber o que fazer">
+		<div class="relativa retangulo-azul">
+			<img class="absoluta" alt="Vodka" src="http://iacom.s8.com.br/produtos/01/00/item/5432/2/5432285_1GG.jpg" height="160" width="160">
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
