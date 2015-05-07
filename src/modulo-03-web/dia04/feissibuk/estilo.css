@@ -1,0 +1,69 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+@media (max-width: 397px) {
+  .janela-mensagens:not(:last-child) {
+  	display: none;
+  }
+}
+
+.big-foot {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.in-flames {
+	width: 100%;
+	height: 140px;
+	position: relative;
+	background-image: url(http://www.befreetoday.com.au/wp-content/uploads/2013/02/flames-1.gif);
+}
+
+.chat {
+	padding: 0 0;
+	text-align: right;
+}
+
+.janela-mensagens {
+	background-color: brown;
+	border: solid 1px white;
+	height: 200px;
+	width: 150px;
+	word-wrap: break-word;
+	overflow-y: scroll;
+	padding: 0 30 10 0;
+	display: inline-block;
+}
+
+.janela-mensagens li {
+	text-align: left;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.estrelas {
+	height: 50px;
+	background-image: url(http://code.divshot.com/geo-bootstrap/img/stars.gif);
+}
+
+.timeline {
+	margin-top: 100px;
+	height: 350px;
+	overflow-y: scroll;
+}
+
+.timeline li {
+	font-size: 2em;
+	border: solid yellow 2px;
+	display: block;
+	padding: 10;
+	width: 700px;
+}
