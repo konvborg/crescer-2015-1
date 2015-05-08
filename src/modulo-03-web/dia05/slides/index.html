@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript!</title>
+  <meta name="description" content="Webcam-based gesture recognition with reveal.js">
+  <meta name="author" content="William Wu (reveal.js by Hakim El Hattab)">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <a href="https://github.com/willy-vvu/reveal.js" style="position:fixed;z-index:1000;left:0;top:0;"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <a href="http://www.chromeexperiments.com/detail/gesture-based-revealjs/" style="position:fixed;z-index:1000;left:20px;bottom:20px;"><img src="badge.jpg" alt="See my Experiment on ChromeExperiments.com" /></a>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <img src="https://pimentacomlimao.files.wordpress.com/2011/10/dez-dias-que-abalaram-o-mundo.jpg" alt="">
+      </section>
+      <section>
+        <h1>['A','r','r','a','i','i','i']</h1>
+        <ul>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">reverse()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">shift()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">unshift()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice()</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>['A','r','r','a','i','i','i']</h1>
+        <ul>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">concat()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">indexOf()</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Exercícios JS - Pt 1</h1>
+        <a class="link-grande" target="_blank" href="http://git.io/vJj7I">http://git.io/vJj7I</a>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      theme: 'beige',//Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+  <style>
+  #comp{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    opacity:0.1;
+  }
+  </style>
+  <div id="disp"><canvas id="comp"></canvas></div>
+  <video id="video" autoplay width="300" style="display:none"></video>
+  <canvas id="canvas" style="width:300px;display:none;"></canvas>
+  <script src="js/gesture.js"></script> </body>
+</html>
