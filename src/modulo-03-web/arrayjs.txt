@@ -1,0 +1,64 @@
+for each:
+
+var cerveja = [ 'skol', 'polar', 'colonia'];
+cerveja.forEach(function(i){alert(i+" #sqn");});
+
+var alertar = function(i){alert(i+" #sqn");}
+cerveja.forEach(alertar);
+
+
+push() 																	  insere elemento no final da array
+pop()         															  retira o ultimo elemento da array, retorna ele na execução.
+reverse()                                                                 inverte a ordem dos elementos de uma array.
+shift()                                                                   retira o primeiro elemento do array, retorna ele na execução.
+unshift()                                                                 coloca um elemento na primeira posição do array.
+slice(x,y)                                                    			  tira um subconjunto x = começo y = final.
+splice(inicio,quantos quero remover, elementos que eu quero adicionar)    modifica um array, pode remover ou inserir elementos no array. 
+concat()																  junta dois arrays.
+join(' ')																  transforma array em string
+split(' ')																  transforma uma string em um array
+map()																	  executa uma função à cada elemento do array
+
+
+
+
+
+
+
+
+var uhul = str.reduce(function(a,b){return a+b;});
+
+
+
+map
+
+function contemBacon(str){ return str.indexOf('Bacon') !== -1;} -> Retorna fa1so se não tiver Bacon na string inserida     
+function allBacon(array){ array.map(function(i){return i + "Bacon";});}; retorna elemento original + bacon
+
+function allBacon(array){
+	var concatenarBacon=function(i){
+		return i + "Bacon";
+	}; 
+	return array.map(concatenarBacon);
+};
+
+
+
+mapreduce
+somar idades
+
+var soma = pessoas.map(function(i){
+	return i.idade;
+})
+.reduce(function(a,b){
+	return a+b;
+});
+
+
+
+
+for(i=0;i<clubes.length;i++){
+   for(k=0;k<clubes.length;k++){
+     if()
+   }
+}
