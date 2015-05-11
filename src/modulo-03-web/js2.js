@@ -1,9 +1,10 @@
 /*------------------------------------1-----------------------------------------*/
 
   function brewdog(a,b){
-  var tam = Math.max(a,b);
+  var tam = Math.max(a.length,b.length);
+  var iguais = 0;
   for(i=0;i<tam;i++){
-    if(a[i]!==b[i]){
+    if(a[i]!==b[i])
       iguais=iguais+1;
   }
   return iguais;
