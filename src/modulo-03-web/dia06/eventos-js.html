@@ -15,22 +15,47 @@
 	<body onclick="alert('bode!!')" onload="carregou()">
 		<!--<button id="btn" onclick="alertar();">Clique-me</button>-->
 		<button id="btn">Clique-me</button>
+		<button id="btn2">Clique-me</button>
+		<h2></h2>
+		<h2></h2>
+		<h2></h2>
 		<img id="lhama" src="http://alicjawkrainiemezczyzn.pl/wp-content/uploads/2015/02/Surprised-Llama-338x360.jpg">
 		<img id="borat" src="https://yt3.ggpht.com/-BRZhdFZhSco/AAAAAAAAAAI/AAAAAAAAAAA/duFZmkYx-r8/s900-c-k-no/photo.jpg">
-		<h2></h2>
+		<!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+		<script src="jquery-2.1.4.min.js"></script>
 		<script>
 			function alertar(e) {
 				alert('alerta interno!!');
 				e.stopPropagation();
 				//e.preventDefault();
 			};
-			var btn = document.getElementById('btn');
-			btn.onclick = alertar;
-			btn.innerText = 'Click-me';
+			//var btn = document.getElementById('btn');
+			//btn.onclick = alertar;
+			//btn.innerText = 'Click-me';
 			
-			document.getElementsByTagName('h2')[0].innerText = 
-				new Date()
-					.toLocaleString('pt-BR');
+			var fazAMao = function() {
+				$(this).text("Click-me");
+			};
+			
+			$("#btn").click(fazAMao);
+			
+			$("#btn").on('click change focus mouseover', function() {
+				$(this).css({
+					'background': 'black',
+					'color': 'white'
+				});
+			});
+			
+			$("#btn2").on('click change focus mouseover', function() {
+				$(this).css({
+					'background': 'black',
+					'color': 'white'
+				});
+			});
+			
+			$("h2").text(new Date().toLocaleString('pt-BR'));
+			
+			//document.getElementsByTagName('h2')[0].innerText = new Date().toLocaleString('pt-BR');
 			
 			var lhama = document.getElementById('lhama');
 			//lhama.onload = alertarLhama;
@@ -53,8 +78,16 @@
 				alert('carregou muito antes!');
 			};
 			
-			document.addEventListener('DOMContentLoaded', executaQuandoCarregarDOM);
+//document.addEventListener('DOMContentLoaded', executaQuandoCarregarDOM);
+
+			$(document).ready(function() {
+				executaQuandoCarregarDOM();
+			});
 			
+			//$(function() {
+				//executaQuandoCarregarDOM();
+			//});
+
 		</script>
 	</body>
 </html>
