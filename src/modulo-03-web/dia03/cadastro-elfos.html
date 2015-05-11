@@ -1,0 +1,82 @@
+<!doctype>
+<html>
+	<head>
+		<title>Minha página querida</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<form action="cadastro-elfos.html" method="post" enctype="multipart/form-data">
+			<p>
+				<input type="text" name="nome" placeholder="Seu nome" required pattern=".{6,}" title="6 letras ou mais">
+			</p>
+			<p>
+				<input type="radio" name="sexo" value="m" required>Masculino
+				<input type="radio" name="sexo" value="f">Feminino
+			</p>
+			<p>
+				<label for="qtdFlechas">Quantidade inicial de flechas:</label>
+				<input id="qtdFlechas" name="qtdFlechas" type="number" value="42">
+			</p>
+			<p>
+				<label for="dtNascimento">Data de nascimento:</label>
+				<input id="dtNascimento" name="dtNascimento" type="date" required>
+			</p>
+			<p>
+				<label for="status">Status:</label>
+				<select id="status" name="status">
+					<option value="">Selecione</option>
+					<option value="dormindo">Dormindo</option>
+					<option value="caçando">Caçando</option>
+					<option value="contando_piada">Contando piada</option>
+				</select>
+			</p>
+			<p>
+				<label for="itens">Itens iniciais:</label>
+				<select id="itens" name="itens" multiple>
+					<option value="arco_e_flecha" selected>Arco e Flecha</option>
+					<option value="espada_aço_portoalegrense">Espada de aço Porto-alegrense</option>
+					<option value="escudo_de_amburana" selected>Escudo de amburana</option>
+					<option value="poção_hp">Poção HP</option>
+				</select>
+			</p>
+			<p>
+				<input type="file" id="avatar" name="avatar" accept=".jpg,.jpeg,.png" onchange="return validarExt();">
+			</p>
+			<p>
+				<input type="submit" value="Cadastrar">
+			</p>
+			
+		</form>
+		<script>
+			function validarExt() {
+				//var inputFile = document.getElementsByName('avatar')[0];
+				var inputFile = document.getElementById('avatar');
+				var nomeArquivo = inputFile.value;
+				var valida = false;
+				var extensoesValidas = [ '.jpg', '.jpeg', '.png' ];
+				for (var i = 0, len = extensoesValidas.length; i < len; i++) {
+					var ext = extensoesValidas[i];
+					var apenasAExtensao = nomeArquivo.substring(nomeArquivo.length-ext.length, nomeArquivo.length).toLowerCase();
+										
+					if (apenasAExtensao === ext.toLowerCase()) {
+						valida = true;
+						break;
+					}
+				}
+				
+				if (valida === false) {
+					alert('Extensão inválida!');
+					inputFile.value = null;
+				}
+				
+				return valida;
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
