@@ -18,8 +18,15 @@ function Emprestimo(options) {
   this.quantidadeParcelas = options.parcelas || 3;
 
   this.valorParcela = function() {
-    return
+    var parcela = this.valorTotal/((1-Math.pow((1+this.taxaJuros),-this.quantidadeParcelas))/this.taxaJuros)
+    return Math.round(parcela*100)/100;
   };
+
+  this.valorTotalJuros = function(){
+    var valorTotalJuros = (this.valorParcela()*this.quantidadeParcelas)-this.valorTotal;
+    return Math.round(valorTotalJuros*100)/100;
+  };
+}
 /*------------------------------------3-----------------------------------------*/
   function palindromo(palavra){
  		illuminatis = ["iluminatti", "ledesma", "dante", "verdemusgo", "bacon"];
