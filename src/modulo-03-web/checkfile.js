@@ -4,7 +4,7 @@ function checkFile() {
     if (fileElement.value.lastIndexOf(".") > 0) {
         fileExtension = fileElement.value.substring(fileElement.value.lastIndexOf(".") + 1, fileElement.value.length);
     }
-    if (fileExtension.toLowerCase() === "png" || fileExtension.toLowerCase() === "jpg" || fileExtension.toLowerCase() ==="jpeg") {
+    if (fileExtension.toLowerCase() === "png" || fileExtension.toLowerCase() === "jpg" || fileExtension ==="jpeg") {
         return;
     }
     else {
