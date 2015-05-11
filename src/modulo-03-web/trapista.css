@@ -1,0 +1,18 @@
+body{
+  margin: 0;
+}
+.bloco{
+  display: inline-block;
+  width: 33.33%;
+  height: 100vh;
+  float: left;
+}
+.preto {
+   background-color: black;
+}
+.amarelo {
+   background-color: yellow;
+}
+.vermelho {
+   background-color: red;
+}
