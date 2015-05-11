@@ -4,3 +4,6 @@ doc
 *.ctxt
 src/modulo-01-java-OO/Dia01/.settings/launch.json
 src/modulo-01-java-OO/Dia01/package.bluej
+src/modulo-03-web/jquery.js
+src/modulo-03-web/jquery.min.js
+src/modulo-03-web/oi.html

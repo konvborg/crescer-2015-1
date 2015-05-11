@@ -1,5 +1,7 @@
-/*------------------------------------1-----------------------------------------*/
+'use strict'; //Deixa o navegador mais rapido e mais chato quanto a regras.
 
+/*------------------------------------1-----------------------------------------*/
+  
   function brewdog(a,b){
   var tam = Math.max(a.length,b.length);
   var iguais = 0;
