@@ -23,14 +23,14 @@ function Emprestimo(options) {
 /*------------------------------------3-----------------------------------------*/
   function palindromo(palavra){
  		illuminatis = ["iluminatti", "ledesma", "dante", "verdemusgo", "bacon"];
-    palavra = palavra.toLowerCase();
-    palavra = palavra.replace(/[ ,-@!#?$.<>"]/g, "");;
-    palavra = palavra.replace(/[àáâãäå]/g,"a");
-    palavra = palavra.replace(/[èéêë]/g,"e");
-    palavra = palavra.replace(/[òóôöõ]/g,"o");
-    palavra = palavra.replace(/[ùúôü]/g,"u");
-    palavra = palavra.replace(/[ìíîï]/g,"i");
-    palavra = palavra.replace(/[ç]/g,"c");
+    palavra = palavra.toLowerCase()
+    .replace(/[ ,-@!#?$.<>"]/g, "")
+    .replace(/[àáâãäå]/g,"a")
+    .replace(/[èéêë]/g,"e")
+    .replace(/[òóôöõ]/g,"o")
+    .replace(/[ùúôü]/g,"u")
+    .replace(/[ìíîï]/g,"i")
+    .replace(/[ç]/g,"c");
     if(illuminatis.indexOf(palavra) !== -1)
         return true;
     var invertida = palavra.split('').reverse().join('');
