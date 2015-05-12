@@ -1,0 +1,57 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>United!! United!!</title>
+		<style>
+			h1 {
+				color: red;
+			}
+			a {
+				font-family: 'Myriad Pro';
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>United!!!!</h1>
+		<ul id="noticias"></ul>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script>
+			$(function() {
+				var ul = $('#noticias');
+				// http://content.guardianapis.com/search?q=manchester%20united&api-key=test
+				$.ajax({
+					url: 'http://content.guardianapis.com/search?q=manchester%20united&api-key=test',
+					type: 'GET'
+				}).done(function(res) {
+					res.response.results.forEach(function(i) {
+						ul.append(
+							$('<li>').append(
+								$('<a>')
+									.attr('target', '_blank')
+									.attr('href', i.webUrl)
+									.text(i.webTitle)
+							)
+						);
+						console.log(i.webTitle);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
