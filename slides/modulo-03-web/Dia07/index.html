@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>jQuery!</title>
+  <meta name="description" content="Webcam-based gesture recognition with reveal.js">
+  <meta name="author" content="William Wu (reveal.js by Hakim El Hattab)">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <a href="https://github.com/willy-vvu/reveal.js" style="position:fixed;z-index:1000;left:0;top:0;"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <a href="http://www.chromeexperiments.com/detail/gesture-based-revealjs/" style="position:fixed;z-index:1000;left:20px;bottom:20px;"><img src="badge.jpg" alt="See my Experiment on ChromeExperiments.com" /></a>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h1>setInterval</h1>
+        <pre>setInterval(function(){<br>      console.log(new Date());<br>}, 30000);</pre>
+      </section>
+      <section>
+        <h1>setTimeout</h1>
+        <pre>setTimeout(function(){<br>      console.log('caiu a ficha!');<br>}, 2000);</pre>
+      </section>
+      <section>
+        <img src="http://www.quickmeme.com/img/c6/c676de4842e508242361c7a0aa2fe13a2e1191b58546d1554d5c128c404216d9.jpg" alt="">
+      </section>
+      <section>
+        <h1>DOM Manipulation</h1>
+        <ul>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/addClass/">addClass()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/hasClass/">hasClass()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/toggleClass/">toggleClass()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/after/">after()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/clone/">clone()</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>DOM Manipulation</h1>
+        <ul>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/remove/">remove()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/html/">html()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/val/">val()</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://api.jquery.com/attr/">attr()</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>JSON.org</h1>
+        <img src="http://cdn.atl.clicrbs.com.br/wp-content/uploads/sites/27/2014/04/sexta-feira-13-vai-virar-seriado-de-televisao-estrelado-por-jason.jpg" alt="">
+      </section>
+      <section>
+        <img height="400" src="http://www.colgate.pt/PDP/Ajax/PT/About/Story/images/2010c.png" alt="">
+      </section>
+      <section>
+        <h1>$.ajax</h1>
+        <pre>$.ajax({ url: '/webservice', type: 'GET' })<br>.done(function(response) { })<br>.fail(function(error) { });</pre>
+      </section>
+      <section>
+        <h1>Exemplo de API</h1>
+        <a style="margin-top: 150px; font-size: 50px;" href="http://open-platform.theguardian.com/">http://open-platform.theguardian.com/</a>
+      </section>
+      <section>
+        <h1>ebook</h1>
+        <a class="link-grande" target="_blank" href="http://jqfundamentals.com/legacy/">jqfundamentals.com</a>
+      </section>
+      <section>
+        <h1>ebook</h1>
+        <a class="link-grande" target="_blank" href="http://herson.objectis.net/downloads/guia-para-iniciantes-em-jquery/at_download/file">jqfundamentals pt-BR</a>
+      </section>
+      <section>
+        <h1>Sites</h1>
+        <a class="link-grande" target="_blank" href="http://browserdiet.com/pt/">Browser Diet</a>
+      </section>
+      <section>
+        <h1>Sites</h1>
+        <a class="link-grande" target="_blank" href="https://www.codeschool.com/courses/try-jquery">Code School</a>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      theme: 'beige',//Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+  <style>
+  #comp{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    opacity:0.1;
+  }
+  </style>
+  <div id="disp"><canvas id="comp"></canvas></div>
+  <video id="video" autoplay width="300" style="display:none"></video>
+  <canvas id="canvas" style="width:300px;display:none;"></canvas>
+  <script src="js/gesture.js"></script> </body>
+</html>
