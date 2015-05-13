@@ -1,0 +1,15 @@
+package filmator;
+
+public enum Genero {
+	COMEDIA(0,"Comédia"),
+	ACAO(0,"Ação"),
+	DRAMA(0,"Drama"),
+	EPICO(0,"Épico");
+	int n;
+	String nome;
+	private Genero(int n, String nome){
+	}
+	public void adicionarNumero(){
+		this.n++;
+	}
+}

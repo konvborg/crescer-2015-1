@@ -1,4 +1,4 @@
-'use strict'; //Deixa o navegador mais rapido e mais chato quanto a regras.
+'use strict'; //Deixa o navegador mais rapido e mais chato quanto a regras. 
 
 /*------------------------------------1-----------------------------------------*/
   

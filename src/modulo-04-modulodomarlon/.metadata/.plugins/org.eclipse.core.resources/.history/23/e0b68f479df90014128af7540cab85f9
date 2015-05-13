@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class Filme {
+	ArrayList<Ator> elenco = new ArrayList<>();
+	String titulo;
+	
+	public Filme(String titulo){
+		this.titulo=titulo;
+	}
+	
+	public String toString(){
+		String aux = "Titulo: ".concat(this.titulo.concat("\nElenco:"));
+		for(Ator ator: elenco){
+			aux.concat(" ".concat(ator.toString()));
+		}
+		return aux;
+	}
+	private void inserirAtor(Ator ator){
+		this.elenco.add(ator);
+	}
+}

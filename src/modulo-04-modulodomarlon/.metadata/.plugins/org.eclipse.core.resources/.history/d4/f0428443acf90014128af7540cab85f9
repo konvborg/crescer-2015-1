@@ -1,0 +1,22 @@
+package filmator;
+
+import java.util.ArrayList;
+
+public class Netflox {
+	private ArrayList<Filme> listaFilmes = new ArrayList<>();
+	
+	public void inserirFilme(Filme filme){
+		this.listaFilmes.add(filme);
+	}
+	public void reproduzirFilme(Filme filme){
+		if(listaFilmes.contains(filme)){
+			System.out.println("Reproduzindo " + filme.getTitulo() + "!");
+			filme.getGenero().adicionarNumero();
+		}	else{
+			System.out.println("Filme não disponível.");
+		}		
+	}
+	public void gerarRelatorio(){
+		
+	}
+}

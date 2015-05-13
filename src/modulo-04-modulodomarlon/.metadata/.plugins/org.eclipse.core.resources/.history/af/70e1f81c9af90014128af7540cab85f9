@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+
+public class Filme {
+	ArrayList<Ator> elenco = new ArrayList<>();
+	
+	public static String toString;{
+		for(Ator ator: elenco)
+			System.out.println(ator.nome);
+	}
+}
