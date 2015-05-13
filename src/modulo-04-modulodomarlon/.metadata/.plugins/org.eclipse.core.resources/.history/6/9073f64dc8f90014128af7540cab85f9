@@ -24,9 +24,9 @@ public class Netflox {
 	}
 	public void gerarRelatorio(){
 		System.out.println("Relatório:");
-		System.out.println(Genero.COMEDIA.desc +"\nExibido "+ this.vis.getOrDefault(Genero.ACAO,0) +" vezes.\n\n");
-		System.out.println(Genero.ACAO.desc +"\nExibido "+ this.vis.getOrDefault(Genero.COMEDIA,0) +" vezes.\n\n");
-		System.out.println(Genero.EPICO.desc +"\nExibido "+ this.vis.getOrDefault(Genero.DRAMA,0)+" vezes.\n\n");
-		System.out.println(Genero.DRAMA.desc +"\nExibido "+ this.vis.getOrDefault(Genero.EPICO,0)+" vezes.\n\n");
+		System.out.println(Genero.COMEDIA.desc +"\nExibido "+ this.vis.get(Genero.COMEDIA) +" vezes.\n\n");
+		System.out.println(Genero.ACAO.desc +"\nExibido "+ this.vis.get(Genero.ACAO) +" vezes.\n\n");
+		System.out.println(Genero.EPICO.desc +"\nExibido "+ this.vis.get(Genero.EPICO)+" vezes.\n\n");
+		System.out.println(Genero.DRAMA.desc +"\nExibido "+ this.vis.get(Genero.DRAMA)+" vezes.\n\n");
 	}
 }
