@@ -1,7 +1,0 @@
-public class Ator {
-	private String nome;
-	
-	public String toString(){
-		return this.nome;
-	}
-}

@@ -1,9 +1,0 @@
-import java.util.ArrayList;
-
-public class Filme {
-	ArrayList<Ator> elenco = new ArrayList<>();
-	
-	public static String toString{
-		
-	}
-}
