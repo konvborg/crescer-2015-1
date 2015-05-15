@@ -3,9 +3,14 @@ package filmator;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Netflox {
+public class Empresa {
+	private String nome;
 	private ArrayList<Filme> listaFilmes = new ArrayList<>();
 	private HashMap<Genero, Integer> vis = new HashMap<>();
+	
+	public Empresa(String nome){
+		this.nome=nome;
+	}
 	public void inserirFilme(Filme filme){
 		this.listaFilmes.add(filme);
 	}
@@ -23,7 +28,7 @@ public class Netflox {
 		}		
 	}
 	public void gerarRelatorio(){
-		System.out.println("Relatório:");
+		System.out.println("Relatório " + this.nome + " :");
 		System.out.println(Genero.COMEDIA.desc +"\nExibido "+ this.vis.getOrDefault(Genero.ACAO,0) +" vezes.\n\n");
 		System.out.println(Genero.ACAO.desc +"\nExibido "+ this.vis.getOrDefault(Genero.COMEDIA,0) +" vezes.\n\n");
 		System.out.println(Genero.EPICO.desc +"\nExibido "+ this.vis.getOrDefault(Genero.DRAMA,0)+" vezes.\n\n");
