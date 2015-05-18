@@ -9,7 +9,6 @@
 3. Regras:
  * Os métodos **inserir** e **atualizar** não devem aceitar receitas nulas ou sem nome;
  * Os métodos que buscam uma receitadevem lançar uma exceção caso não encontrem a receita pelo nome
- * Uma receita possui N ingredientes. Cada in
  * (Dica): Façam o método atualizar por último, é o mais difícil.
  * (Dica): Criem uma Lista para armazenar as receitas
  
