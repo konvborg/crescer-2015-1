@@ -17,24 +17,24 @@
  
 Receita 
 
- * `String nome`
+  * `String nome`
 
-	* `List<Ingrediente>`
+  * `List<Ingrediente>`
 
-	* `List<Instrucao>`
+  * `List<Instrucao>`
 
 	  
  Ingrediente
 
  * `String nome`
 
-	* `double quantidade` 
+ * `double quantidade` 
 
-	* `UnidadeMedida (enum)` --> (ex.: grama, unidade, xícara, colher_sopa, ...)
+ * `UnidadeMedida (enum)` --> (ex.: grama, unidade, xícara, colher_sopa, ...)
 	    
-	Instrucao
+Instrucao
 
-	* `descricao`
+ * `descricao`
  
 
  
