@@ -9,9 +9,34 @@
 3. Regras:
  * Os métodos **inserir** e **atualizar** não devem aceitar receitas nulas ou sem nome;
  * Os métodos que buscam uma receitadevem lançar uma exceção caso não encontrem a receita pelo nome
+ * Uma receita possui N ingredientes. Cada in
  * (Dica): Façam o método atualizar por último, é o mais difícil.
  * (Dica): Criem uma Lista para armazenar as receitas
  
+ 4. Nossa modelagem:
+ 
+Receita 
+
+ * `String nome`
+
+	* `List<Ingrediente>`
+
+	* `List<Instrucao>`
+
+	  
+ Ingrediente
+
+ * `String nome`
+
+	* `double quantidade` 
+
+	* `UnidadeMedida (enum)` --> (ex.: grama, unidade, xícara, colher_sopa, ...)
+	    
+	Instrucao
+
+	* `descricao`
+ 
+
  
 ### Referências / material para estudo
 1. http://www.caelum.com.br/apostila-java-orientacao-objetos/excecoes-e-controle-de-erros/
