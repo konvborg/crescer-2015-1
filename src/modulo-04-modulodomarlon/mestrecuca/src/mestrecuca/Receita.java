@@ -19,4 +19,14 @@ public class Receita {
 	public void adicionarInstrucao(Instrucao instrucao){
 		this.listaInstrucao.add(instrucao);
 	}
+	
+	public double calcularValor(){
+		double soma=0;
+		for(Ingrediente ingrediente: listaIngrediente){
+			soma+=ingrediente.valor;
+		}
+		return soma;
+	}
+	
+	
 }
