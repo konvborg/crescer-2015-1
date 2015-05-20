@@ -2,5 +2,8 @@
 
 Crie um método que retorna o índice de todas as letras maiúsculas de uma palavra. 
 
-`Ex.: indiceMaiusculas("CWI SoFtware"); //[0,1,2,4,6]`
+```java
+int[] indices = indiceMaiusculas("CWI SoFtware"); 
+// indices --> [0,1,2,4,6]
+```
 
