@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Run To The Hills</title>
+  <script src="jquery.min.js"></script>
+</head>
+<body>
+  <h1 style='font-family: Verdana; color: red'><center>RUN TO THE HILLS</center></h1>
+  
+  <div id="conteudo" style="padding: 50px; width: 100%">
+  </div>
+
+  <script>
+  	$(document).ready(function() {
+				executaAjax();
+			});
+    function executaAjax(){
+       $.ajax({
+          url: 'https://api.spotify.com/v1/artists/6mdiAmATAx73kdxrNrnlao/albums?limit=50',
+          type: 'GET',
+          dataType: 'json'
+         // data: JSON.stringify(nome)
+        }).done(function(resposta){
+          var resultados = resposta.items;
+	          resultados.forEach(function(resultado){
+	              $('#conteudo').append('<img src="' + resultado.images[1].url + '"/>')
+	          });
+        })
+    }
+  </script>
+</body>
+</html>
