@@ -1,7 +1,7 @@
 ### Resumo da aula
 
 1. Finalizamos os exercícios do Mestre Cuca
-2. Correção
+2. Correção/revisão dos exercícios
 3. Revisão de Ajax
 4. Desafio Illuminati (Ajax).
 
