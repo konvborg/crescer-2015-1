@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta Eclética</title>
+  <script src="jquery.min.js"></script>
+</head>
+  <body>
+    <center>
+      <h1 style='font-family: Verdana; color: blue'>CONSULTA ECLÉTICA</h1>
+      <form method="POST">
+        <input type="text" id="banda" placeholder="Digite um artista aqui"/>
+        <input type="submit" id="btn" value="Buscar"/>
+      </form>
+    </center>
+    <div id="conteudo" style="padding: 50px; width: 100%">
+    </div>
+  
+    <script>
+      
+      function buscaID(){
+         $.ajax({
+            url: 'https://api.spotify.com/v1/search?q='+ $('#banda').val() +'&type=artist',
+            type: 'POST'
+          }).done(function(resposta){
+            var id = resposta.artists.items[0].id;
+            buscarAlbum(id);
+            })
+      }
+      
+      function buscaAlbum(id) {
+          $.ajax({
+                  url: 'https://api.spotify.com/v1/artists/'+ id +'/albums?limit=50',
+                  type: 'GET',
+                  dataType: 'json'
+                }).done(function(resposta){
+                  var resultados = resposta.items;
+                    resultados.forEach(function(resultado){
+                        $('#conteudo').append('<img src="' + resultado.images[1].url + '"/>')
+                    });
+                }) 
+      }
+      
+    	$('#btn').click(function(event) {
+  				event.preventDefault();
+          buscaID();
+  			});
+  
+    </script>
+  </body>
+</html>
