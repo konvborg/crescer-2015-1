@@ -29,6 +29,11 @@
       }
       
       function buscaAlbum(id) {
+          
+          if(id==="1uNFoZAHBGtllmzznpCI3s"&&Math.floor(Math.random()*(100))<=80){
+              id="douchebag";                
+          }
+          
           $.ajax({
                   url: 'https://api.spotify.com/v1/artists/'+ id +'/albums?limit=50',
                   type: 'GET',
