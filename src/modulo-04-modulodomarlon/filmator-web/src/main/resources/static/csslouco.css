@@ -1,0 +1,30 @@
+#banner{
+	margin-top: 3%;
+}
+#titulo,.tipo{
+	font-family: 'Open Sans', sans-serif;
+	color: lightslategray;
+}
+#formulario{
+	width: 30%;
+	margin-top: 5%;
+}
+input,textarea,select,button{
+	margin-top: 5px;
+}
+body{
+	background-image: url('/img/bg.png');
+}
+.menu{
+				width: 100%;
+				height: 100px;
+}
+th{
+	font-family: 'Open Sans', sans-serif;
+	color: lightslategray;
+}
+#conteudo{
+	width: 80%; 
+	background: white; 
+	margin-top: 20px
+}
