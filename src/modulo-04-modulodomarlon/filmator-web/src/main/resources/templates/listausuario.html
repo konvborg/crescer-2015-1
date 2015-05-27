@@ -1,0 +1,30 @@
+<!doctype>
+<html>
+	<head>
+		{{> head}}
+	</head>
+	<body style="background-image: url('/img/bg.png')">
+		<center>
+			<div id="banner">
+				<a href="/">
+					<img src="/img/banner.png"/>
+				</a>
+			</div>
+			<div id="conteudo">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Nome</th><th>Login</th><th>Tipo</th>
+						</tr>
+					</thead>
+					<tbody name="lista">
+							{{#listaUsuarios}}
+								<tr><td>{{nome}}</td><td>{{login}}</td><td>{{tipo}}</td></tr>
+							{{/listaUsuarios}}
+					</tbody>
+				</table>
+			</div>
+		</center>
+	</body>
+</html>
+

@@ -8,33 +8,32 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import filmator.dao.FilmeDao;
-import filmator.model.Filme;
+import filmator.dao.UsuarioDao;
 import filmator.model.TipoUsuario;
 import filmator.model.Usuario;
 
 @Controller
-public class CadastroController {
+public class CadastroUsuarioController {
 			
-		@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
+		@RequestMapping(value = "/cadastrousuario", method = RequestMethod.GET)
 		public String home(Model model, HttpSession session) {
 			Usuario usuariologado = (Usuario) session.getAttribute("usuariologado");
 			if(usuariologado!=null&&usuariologado.getTipo()==TipoUsuario.ADMIN){
-				return "cadastro";
+				return "cadastrousuario";
 			}else{
 				return "redirect:/error";
 			}
 		}
 		
 		@Inject
-		private FilmeDao dao;
+		private UsuarioDao dao;
 		
-		@RequestMapping(value = "/cadastro", method = RequestMethod.POST)
-		public String inserir(Filme filme, Model model, HttpSession session) {
+		@RequestMapping(value = "/cadastrousuario", method = RequestMethod.POST)
+		public String inserir(Usuario usuario, Model model, HttpSession session) {
 			Usuario usuariologado = (Usuario) session.getAttribute("usuariologado");
 			if(usuariologado!=null&&usuariologado.getTipo()==TipoUsuario.ADMIN){
-				dao.inserir(filme);
-				return "redirect:/lista";
+				dao.inserir(usuario);
+				return "redirect:/";
 			}else{
 				return "redirect:/error";
 			}

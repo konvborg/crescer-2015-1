@@ -3,27 +3,25 @@ package filmator.controller;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import filmator.dao.FilmeDao;
+import filmator.dao.UsuarioDao;
 import filmator.model.Usuario;
 
 @Controller
-public class ListaController {
+public class ListaUsuarioController {
 
 	@Inject
-	private FilmeDao dao;
+	private UsuarioDao dao;
 	
-	@RequestMapping(value = "/lista", method = RequestMethod.GET)
+	@RequestMapping(value = "/listausuario", method = RequestMethod.GET)
 	public String home(Model model, HttpSession session) {
 		Usuario usuariologado = (Usuario) session.getAttribute("usuariologado");
 		if(usuariologado!=null){
-			model.addAttribute("listaFilmes", dao.lista());
-			return "lista";
+			model.addAttribute("listaUsuarios", dao.lista());
+			return "listausuario";
 		}else{
 			return "redirect:/erro";
 		}

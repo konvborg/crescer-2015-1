@@ -10,13 +10,20 @@
 					<img src="/img/banner.png"/>
 				</a>
 			</div>
-			<div id="formulario">
-				<div id="menu">
-					<a href="/cadastro"><button class="btn btn-default menu">Cadastrar</button></a>
-					<a href="/lista"><button class="btn btn-default menu">Listar</button></a>
+			<div id="conteudo">
+					<h1 class="tipo">Olá, {{nome}}!</h1>
+					<div id="menu">
+					{{#isadmin}}
+					<a href="/cadastrousuario"><button class="btn btn-default menu">Cadastrar Usuário</button></a>
+					<a href="/cadastro"><button class="btn btn-default menu">Cadastrar Filme</button></a>
+					<a href="/listausuario"><button class="btn btn-default menu">Listar Filmes</button></a>
+					{{/isadmin}}
+					<a href="/lista"><button class="btn btn-default menu">Listar Filmes</button></a>
+					<br>
+					<a href="/logoff"><button class="btn btn-default menu">Deslogar</button></a>
 				</div>
 			</div>
 		</center>
 	</body>
-</html>
+</html>.
 
