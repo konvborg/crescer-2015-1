@@ -6,6 +6,7 @@ public class Filme {
 	private int anoLancamento;
 	private Genero genero;
 	private String sinopse;
+	private double media;
 	
 	public Filme(){
 	}
@@ -44,6 +45,12 @@ public class Filme {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public double getMedia() {
+		return media;
+	}
+	public void setMedia(double media) {
+		this.media = media;
 	}
 	
 }
