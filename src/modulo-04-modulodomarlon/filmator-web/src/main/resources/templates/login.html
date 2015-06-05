@@ -2,7 +2,6 @@
 <html>
 	<head>
 		{{> head}}
-		<script src="/login.js"></script>
 	</head>
 	<body>
 		<center>
@@ -15,12 +14,16 @@
 				<form action="/autentica" method="POST">
 					<input id="login" name="login" type="text" class="form-control" placeholder="Login"></input>
 					<input id="senha" name="senha" type="password" class="form-control" placeholder="Senha"></input>
-					<button type="submit" class="btn btn-default">Logar</button>
+					<button type="submit" illuminati="Vejo que você é illuminati. Insira o Konami Code" class="btn btn-default">Logar</button>
 					{{#logininvalido}}
 						<h2>Login/Senha Inválido!</h2>
 					{{/logininvalido}}
 				</form>
 			</div>
 		</center>
+		<div>
+			<script src="/scripts/konami.js"></script>
+			<script>var easter_egg = new Konami('https://youtu.be/7zMbuua7Ka8?t=63');</script>
+		</div>
 	</body>
 </html>

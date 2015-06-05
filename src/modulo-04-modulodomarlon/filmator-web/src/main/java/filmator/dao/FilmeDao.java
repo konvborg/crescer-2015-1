@@ -21,15 +21,17 @@ public class FilmeDao {
 	
 	
 	public void inserir(Filme filme){
-		jdbcTemplate.update("INSERT INTO Filme (nome, anolancamento, genero, sinopse) VALUES (?,?,?,?)", filme.getNome(), filme.getAnoLancamento(), filme.getGenero().name(), filme.getSinopse());
+		jdbcTemplate.update("INSERT INTO Filme (nome, anolancamento, genero, sinopse, imagem) VALUES (?,?,?,?,?)", filme.getNome(), filme.getAnoLancamento(), filme.getGenero().name(), filme.getSinopse(), filme.getImagem());
 	}
 	
 	public List<Filme> lista(){
 		List<Filme> filmes = this.jdbcTemplate.query(
-		        "SELECT NOME, 	"
-		        + "     ANOLANCAMENTO,  "
-		        + "     GENERO, "
-		        + "     SINOPSE, "
+		        "SELECT FILME.NOME,"
+		        + "     FILME.ID ,	"
+		        + "     FILME.ANOLANCAMENTO,  "
+		        + "     FILME.GENERO, "
+		        + "     FILME.SINOPSE, "
+		        + "		FILME.IMAGEM, "
 		        + "     SUM(cast(NOTA as decimal(2.1)))/(SELECT COUNT(F2.NOME) "
 		        + "                                      FROM FILME F2  "
 		        + "                                      LEFT JOIN AVALIACAO ON F2.ID = AVALIACAO.IDFILME "
@@ -40,11 +42,13 @@ public class FilmeDao {
 		        new RowMapper<Filme>() {
 		            public Filme mapRow(ResultSet rs, int rowNum) throws SQLException {
 		                Filme filme = new Filme();
-		                filme.setNome(rs.getString("NOME"));
-		                filme.setAnoLancamento(rs.getInt("ANOLANCAMENTO"));
-		                filme.setGenero(Genero.valueOf(rs.getString("GENERO")));
-		                filme.setSinopse(rs.getString("SINOPSE"));
+		                filme.setNome(rs.getString("FILME.NOME"));
+		                filme.setId(rs.getInt("FILME.ID"));
+		                filme.setAnoLancamento(rs.getInt("FILME.ANOLANCAMENTO"));
+		                filme.setGenero(Genero.valueOf(rs.getString("FILME.GENERO")));
+		                filme.setSinopse(rs.getString("FILME.SINOPSE"));
 		                filme.setMedia((150*rs.getDouble("MEDIA"))/5);
+		                filme.setImagem(rs.getString("IMAGEM"));
 		                return filme;
 		            }
 		        });
